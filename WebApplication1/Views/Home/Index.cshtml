@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/javascript" src="/Scripts/OnScreenKeyboard.js"></script>
+
+@using (Html.BeginForm("UpLoadFile", "File", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="jumbotron">
+        <h1>On Screen Keyboard</h1>
+
+        <div class="col-lg-6 col-sm-6 col-12">
+            <div class="input-group">
+                <span class="input-group-btn">
+                <span class="btn btn-primary btn-file">
+                    Browse&hellip; <input id="fileInput "type="file" name="file" single accept=".txt">
+                </span>
+            </span>
+                <input type="text" class="form-control" readonly>
+            </div>
+            <div>
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </div>
+        </div>
+    </div>
+}

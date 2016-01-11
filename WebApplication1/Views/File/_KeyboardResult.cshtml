@@ -1,0 +1,19 @@
+﻿
+@model WebApplication1.Models.KeyboardViewModel
+
+@using (Html.BeginForm("", "", FormMethod.Post, new {id = "keyboardProgramming"}))
+{
+    <div>
+        @Html.DisplayNameFor(s => s.FileName);
+        @Html.DisplayFor(s => s.FileName);
+    </div>
+    <div>
+        @Html.DisplayNameFor(s => s.FileContents);
+        @Html.DisplayFor(s => s.FileContents);
+    </div>
+    <div>
+        @Html.DisplayNameFor(s => s.DvrProgramming);
+        @Html.DisplayFor(s => s.DvrProgramming);
+    </div>
+}
+
