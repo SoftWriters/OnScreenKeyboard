@@ -1,0 +1,7 @@
+C:\Users\robb\Documents\Job Search\Tests\SoftWriters\OnScreenKeyboard\bin\Debug\OnScreenKeyboard.exe
+C:\Users\robb\Documents\Job Search\Tests\SoftWriters\OnScreenKeyboard\bin\Debug\OnScreenKeyboard.pdb
+C:\Users\robb\Documents\Job Search\Tests\SoftWriters\OnScreenKeyboard\obj\x86\Debug\OnScreenKeyboard.Properties.Resources.resources
+C:\Users\robb\Documents\Job Search\Tests\SoftWriters\OnScreenKeyboard\obj\x86\Debug\OnScreenKeyboard.csproj.GenerateResource.Cache
+C:\Users\robb\Documents\Job Search\Tests\SoftWriters\OnScreenKeyboard\obj\x86\Debug\OnScreenKeyboard.exe
+C:\Users\robb\Documents\Job Search\Tests\SoftWriters\OnScreenKeyboard\obj\x86\Debug\OnScreenKeyboard.pdb
+C:\Users\robb\Documents\Job Search\Tests\SoftWriters\OnScreenKeyboard\obj\x86\Debug\OnScreenKeyboard.testOnScreenKeyboard.resources
