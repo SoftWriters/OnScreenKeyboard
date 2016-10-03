@@ -88,6 +88,13 @@ namespace KeyboardWriterUT
             testPath = fp.GetCharacterPath(startChar, endChar);
             Assert.AreEqual(expectedPath, testPath, "Failed to get correct path for special case of a space");
 
+            // Test special case of same character
+            startChar = 'A';
+            endChar = 'A';
+            expectedPath = "#";
+            testPath = fp.GetCharacterPath(startChar, endChar);
+            Assert.AreEqual(expectedPath, testPath, "Failed to get correct path for special case of same character");
+
             // Test character on same column, down
             startChar = 'G';
             endChar = 'Y';
@@ -135,6 +142,21 @@ namespace KeyboardWriterUT
             expectedPath = "D,R,R,#,D,D,L,#,S,U,U,U,R,#,D,D,R,R,R,#,L,L,L,#,D,R,R,#,U,U,U,L,#";
             testPath = fp.GetSearchPath(searchTerm);
             Assert.AreEqual(expectedPath, testPath, "Failed to get correct search path for 'IT Crowd'");
+
+            // Check search path with non-default keyboard
+            char[][] keyboardLayout = new char[5][]
+            {
+                new char[6] {'A', 'B', 'C', 'D', 'E', 'F' },
+                new char[6] {'G', 'H', 'I', 'J', 'K', 'L' },
+                new char[6] {'M', 'N', 'O', 'P', 'Q', 'R' },
+                new char[6] {'S', 'T', 'U', 'V', 'W', 'X' },
+                new char[6] {'Y', 'Z', '0', '1', '2', '3' }
+            };
+            fp = new FindPath(keyboardLayout);
+            searchTerm = "James 122";
+            expectedPath = "D,R,R,R,#,U,L,L,L,#,D,D,#,U,U,R,R,R,R,#,D,D,D,L,L,L,L,#,S,D,R,R,R,#,R,#,#";
+            testPath = fp.GetSearchPath(searchTerm);
+            Assert.AreEqual(expectedPath, testPath, "Failed to get correct search path for non-default keyboard");
         }
     }
 }
