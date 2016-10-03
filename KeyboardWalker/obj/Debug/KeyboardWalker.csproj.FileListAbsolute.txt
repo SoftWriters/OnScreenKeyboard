@@ -1,0 +1,2 @@
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\KeyboardWalker\bin\Debug\KeyboardWalker.exe.config
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWalker\bin\Debug\KeyboardWalker.exe.config
