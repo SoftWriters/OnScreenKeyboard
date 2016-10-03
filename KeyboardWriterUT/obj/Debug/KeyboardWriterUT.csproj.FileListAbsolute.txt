@@ -1,0 +1,9 @@
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWriterUT\bin\Debug\KeyboardWriterUT.dll
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWriterUT\bin\Debug\KeyboardWriterUT.pdb
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWriterUT\bin\Debug\KeyboardWalker.exe
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWriterUT\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWriterUT\bin\Debug\KeyboardWalker.pdb
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWriterUT\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWriterUT\obj\Debug\KeyboardWriterUT.csprojResolveAssemblyReference.cache
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWriterUT\obj\Debug\KeyboardWriterUT.dll
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWriterUT\obj\Debug\KeyboardWriterUT.pdb

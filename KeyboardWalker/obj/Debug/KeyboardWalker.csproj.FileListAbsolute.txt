@@ -1,2 +1,7 @@
 C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\KeyboardWalker\bin\Debug\KeyboardWalker.exe.config
 C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWalker\bin\Debug\KeyboardWalker.exe.config
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWalker\bin\Debug\KeyboardWalker.exe
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWalker\bin\Debug\KeyboardWalker.pdb
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWalker\obj\Debug\KeyboardWalker.csprojResolveAssemblyReference.cache
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWalker\obj\Debug\KeyboardWalker.exe
+C:\Users\SamIAm\Documents\Workspace\Personal\KeyboardWalker\OnScreenKeyboard\KeyboardWalker\obj\Debug\KeyboardWalker.pdb
