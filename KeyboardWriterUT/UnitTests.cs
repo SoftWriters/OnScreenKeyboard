@@ -28,7 +28,7 @@ namespace KeyboardWriterUT
         }
 
         [TestMethod]
-        public void UT_FindKey()
+        public void UT_FindCharacter()
         {
             // Create the object for testing (default keyboard)
             FindPattern fp = new FindPattern();
@@ -36,26 +36,27 @@ namespace KeyboardWriterUT
 
             // Find the first letter
             expected = new Coordinate(0, 0);
-            test = fp.FindKey('A');
+            test = fp.FindCharacter('A');
             Assert.AreEqual(expected, test, "Failed to find the first character on the keyboard");
 
             // Find the last letter
             expected = new Coordinate(5, 5);
-            test = fp.FindKey('0');
+            test = fp.FindCharacter('0');
             Assert.AreEqual(expected, test, "Failed to find the last character on the keyboard");
 
-            // Find some middle letters
+            // Find a lowercase letter
             expected = new Coordinate(3, 1);
-            test = fp.FindKey('T');
+            test = fp.FindCharacter('t');
             Assert.AreEqual(expected, test, "Failed to find T on the keyboard");
 
+            // Find a number
             expected = new Coordinate(5, 0);
-            test = fp.FindKey('5');
+            test = fp.FindCharacter('5');
             Assert.AreEqual(expected, test, "Failed to find 5 on the keyboard");
 
             // Check non-existant character
             expected = new Coordinate();
-            test = fp.FindKey('#');
+            test = fp.FindCharacter('#');
             Assert.AreEqual(expected, test, "Failed to return emtpy coordinate on non-existant character");
 
             // Check with non-default keyboard
@@ -69,8 +70,71 @@ namespace KeyboardWriterUT
             };
             fp = new FindPattern(keyboardLayout);
             expected = new Coordinate(4, 5);
-            test = fp.FindKey('3');
+            test = fp.FindCharacter('3');
             Assert.AreEqual(expected, test, "Failed to find last key on non-default keyboard");
+        }
+
+        [TestMethod]
+        public void UT_GetCharacterPath()
+        {
+            string expectedPath, testPath;
+            char startChar, endChar;
+            FindPattern fp = new FindPattern();
+
+            // Test special case of a space
+            startChar = 'A';
+            endChar = ' ';
+            expectedPath = "S";
+            testPath = fp.GetCharacterPath(startChar, endChar);
+            Assert.AreEqual(expectedPath, testPath, "Failed to get correct path for special case of a space");
+
+            // Test character on same column, down
+            startChar = 'G';
+            endChar = 'Y';
+            expectedPath = "DDD#";
+            testPath = fp.GetCharacterPath(startChar, endChar);
+            Assert.AreEqual(expectedPath, testPath, "Failed to find path along the same column, down");
+
+            // Test character on same column, up
+            startChar = '9';
+            endChar = 'E';
+            expectedPath = "UUUUU#";
+            testPath = fp.GetCharacterPath(startChar, endChar);
+            Assert.AreEqual(expectedPath, testPath, "Failed to find path along the same column, up");
+
+            // Test character on same row, to the right
+            startChar = 'G';
+            endChar = 'J';
+            expectedPath = "RRR#";
+            testPath = fp.GetCharacterPath(startChar, endChar);
+            Assert.AreEqual(expectedPath, testPath, "Failed to find path along the same row, to the right");
+
+            // Test character on same row, to the left
+            startChar = '0';
+            endChar = '5';
+            expectedPath = "LLLLL#";
+            testPath = fp.GetCharacterPath(startChar, endChar);
+            Assert.AreEqual(expectedPath, testPath, "Failed to find path along the same row, to the left");
+
+            // Test character on different row and column
+            startChar = 'I';
+            endChar = 'T';
+            expectedPath = "DDL#";
+            testPath = fp.GetCharacterPath(startChar, endChar);
+            Assert.AreEqual(expectedPath, testPath, "Failed to find path from I to T");
+        }
+
+        [TestMethod]
+        public void UT_GetSearchPath()
+        {
+            string searchTerm, expectedPath, testPath;
+            FindPattern fp = new FindPattern();
+
+            // Check given search term
+            searchTerm = "IT Crowd";
+            expectedPath = "D,R,R,#,D,D,L,#,S,U,U,U,R,#,D,D,R,R,R,#,L,L,L,#,D,R,R,#,U,U,U,L,#";
+            testPath = fp.GetSearchPath(searchTerm);
+            Assert.AreEqual(expectedPath, testPath, "Failed to get correct search path for 'IT Crowd'");
         }
     }
 }

@@ -67,25 +67,95 @@ namespace KeyboardWalker
         #endregion
 
         #region Public Action Methods
+        // Get the full path of a string search term
+        public string GetSearchPath(string searchTerm)
+        {
+            string path = "";
 
+            // For each letter
+
+                // Find the pattern from current letter
+
+                // Append the pattern and the select
+
+            return path;
+        }
         #endregion
 
         #region Public Helpers
-        public Coordinate FindKey(char key)
+        // Find the specified character on the keyboard
+        public Coordinate FindCharacter(char key)
         {
             Coordinate ret = new Coordinate();
+
+            // Get uppercase char for comparison
+            char uKey = Char.ToUpper(key);
 
             // Loop through each row of the keyboard
             for (int x = 0; x < _keyboardLayout.Length; x++)
             {
                 // Check for the specified character in the keyboard
-                int pos = Array.IndexOf(_keyboardLayout[x], key);
+                int pos = Array.IndexOf(_keyboardLayout[x], uKey);
                 if (pos > -1)
                 {
                     // Found the item, set the coordinate and stop looking
                     ret.X = x;
                     ret.Y = pos;
                 }
+            }
+
+            return ret;
+        }
+
+        public string GetCharacterPath(char startChar, char endChar)
+        {
+            string ret = "";
+
+            // Check for the special case of a space
+            if (endChar == ' ')
+            {
+                ret = "S";
+            }
+            else
+            {
+                // Get the coordinate of the start character
+                Coordinate start = FindCharacter(startChar);
+
+                // Get the coordinate of the end character
+                Coordinate end = FindCharacter(endChar);
+
+                // Calculate the vertical movement
+                int v = (int)start.X - (int)end.X;
+                if (v > 0)
+                {
+                    // Positive vertical, move up
+                    for (int i = 0; i < v; i++)
+                        ret += "U";
+                }
+                else
+                {
+                    // Negative vertical, move down
+                    for (int i = v; i < 0; i++)
+                        ret += "D";
+                }
+
+                // Calculate the horizontal movement
+                int h = (int)start.Y - (int)end.Y;
+                if (h > 0)
+                {
+                    // Positive horizontal, move left
+                    for (int i = 0; i < h; i++)
+                        ret += "L";
+                }
+                else
+                {
+                    // Negative horizontal, move right
+                    for (int i = h; i < 0; i++)
+                        ret += "R";
+                }
+
+                // Append the select
+                ret += "#";
             }
 
             return ret;
