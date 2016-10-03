@@ -1,6 +1,6 @@
 ﻿using KeyboardWalker;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using static KeyboardWalker.FindPattern;
+using static KeyboardWalker.FindPath;
 
 namespace KeyboardWriterUT
 {
@@ -8,10 +8,10 @@ namespace KeyboardWriterUT
     public class UnitTests
     {
         [TestMethod]
-        public void UT_FindPatternConstructor()
+        public void UT_FindPathConstructor()
         {
             // Create default object and check valid
-            FindPattern obj = new FindPattern();
+            FindPath obj = new FindPath();
             Assert.IsNotNull(obj.GetKeyboardLayout(), "Failed to create default FindPattern object");
 
             // Create object with custom keyboard and check valid
@@ -23,7 +23,7 @@ namespace KeyboardWriterUT
                 new char[6] {'S', 'T', 'U', 'V', 'W', 'X' },
                 new char[6] {'Y', 'Z', '0', '1', '2', '3' }
             };
-            obj = new FindPattern(keyboardLayout);
+            obj = new FindPath(keyboardLayout);
             Assert.IsNotNull(obj.GetKeyboardLayout(), "Failed to create FindPattern object with custom keyboard layout");
         }
 
@@ -31,7 +31,7 @@ namespace KeyboardWriterUT
         public void UT_FindCharacter()
         {
             // Create the object for testing (default keyboard)
-            FindPattern fp = new FindPattern();
+            FindPath fp = new FindPath();
             Coordinate expected, test;
 
             // Find the first letter
@@ -68,7 +68,7 @@ namespace KeyboardWriterUT
                 new char[6] {'S', 'T', 'U', 'V', 'W', 'X' },
                 new char[6] {'Y', 'Z', '0', '1', '2', '3' }
             };
-            fp = new FindPattern(keyboardLayout);
+            fp = new FindPath(keyboardLayout);
             expected = new Coordinate(4, 5);
             test = fp.FindCharacter('3');
             Assert.AreEqual(expected, test, "Failed to find last key on non-default keyboard");
@@ -79,7 +79,7 @@ namespace KeyboardWriterUT
         {
             string expectedPath, testPath;
             char startChar, endChar;
-            FindPattern fp = new FindPattern();
+            FindPath fp = new FindPath();
 
             // Test special case of a space
             startChar = 'A';
@@ -128,7 +128,7 @@ namespace KeyboardWriterUT
         public void UT_GetSearchPath()
         {
             string searchTerm, expectedPath, testPath;
-            FindPattern fp = new FindPattern();
+            FindPath fp = new FindPath();
 
             // Check given search term
             searchTerm = "IT Crowd";

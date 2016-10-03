@@ -2,7 +2,7 @@
 
 namespace KeyboardWalker
 {
-    public class FindPattern
+    public class FindPath
     {
         #region Public Structs
         public struct Coordinate
@@ -56,7 +56,7 @@ namespace KeyboardWalker
         #endregion
 
         #region Constructor
-        public FindPattern(char[][] keyboardLayout = null)
+        public FindPath(char[][] keyboardLayout = null)
         {
             // Check to see if a new keyboard layout was given
             if (keyboardLayout != null)
