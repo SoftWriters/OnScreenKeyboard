@@ -91,35 +91,35 @@ namespace KeyboardWriterUT
             // Test character on same column, down
             startChar = 'G';
             endChar = 'Y';
-            expectedPath = "DDD#";
+            expectedPath = "D,D,D,#";
             testPath = fp.GetCharacterPath(startChar, endChar);
             Assert.AreEqual(expectedPath, testPath, "Failed to find path along the same column, down");
 
             // Test character on same column, up
             startChar = '9';
             endChar = 'E';
-            expectedPath = "UUUUU#";
+            expectedPath = "U,U,U,U,U,#";
             testPath = fp.GetCharacterPath(startChar, endChar);
             Assert.AreEqual(expectedPath, testPath, "Failed to find path along the same column, up");
 
             // Test character on same row, to the right
             startChar = 'G';
             endChar = 'J';
-            expectedPath = "RRR#";
+            expectedPath = "R,R,R,#";
             testPath = fp.GetCharacterPath(startChar, endChar);
             Assert.AreEqual(expectedPath, testPath, "Failed to find path along the same row, to the right");
 
             // Test character on same row, to the left
             startChar = '0';
             endChar = '5';
-            expectedPath = "LLLLL#";
+            expectedPath = "L,L,L,L,L,#";
             testPath = fp.GetCharacterPath(startChar, endChar);
             Assert.AreEqual(expectedPath, testPath, "Failed to find path along the same row, to the left");
 
             // Test character on different row and column
             startChar = 'I';
             endChar = 'T';
-            expectedPath = "DDL#";
+            expectedPath = "D,D,L,#";
             testPath = fp.GetCharacterPath(startChar, endChar);
             Assert.AreEqual(expectedPath, testPath, "Failed to find path from I to T");
         }

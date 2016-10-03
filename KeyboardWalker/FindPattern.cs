@@ -66,23 +66,35 @@ namespace KeyboardWalker
         }
         #endregion
 
-        #region Public Action Methods
+        #region Public Methods
         // Get the full path of a string search term
         public string GetSearchPath(string searchTerm)
         {
             string path = "";
+            char curr = 'A';
+            int counter = 0;
 
-            // For each letter
-
+            // Iterate through each character in the search term
+            foreach (char c in searchTerm)
+            {
                 // Find the pattern from current letter
+                path += GetCharacterPath(curr, c);
 
-                // Append the pattern and the select
+                // Append a comma if not the last character
+                if (counter < searchTerm.Length - 1)
+                {
+                    path += ",";
+                    counter++;
+                }
+
+                // Set new current character
+                if (c != ' ')
+                    curr = c;
+            }
 
             return path;
         }
-        #endregion
 
-        #region Public Helpers
         // Find the specified character on the keyboard
         public Coordinate FindCharacter(char key)
         {
@@ -130,13 +142,13 @@ namespace KeyboardWalker
                 {
                     // Positive vertical, move up
                     for (int i = 0; i < v; i++)
-                        ret += "U";
+                        ret += "U,";
                 }
                 else
                 {
                     // Negative vertical, move down
                     for (int i = v; i < 0; i++)
-                        ret += "D";
+                        ret += "D,";
                 }
 
                 // Calculate the horizontal movement
@@ -145,13 +157,13 @@ namespace KeyboardWalker
                 {
                     // Positive horizontal, move left
                     for (int i = 0; i < h; i++)
-                        ret += "L";
+                        ret += "L,";
                 }
                 else
                 {
                     // Negative horizontal, move right
                     for (int i = h; i < 0; i++)
-                        ret += "R";
+                        ret += "R,";
                 }
 
                 // Append the select
