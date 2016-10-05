@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace OnScreenKeyboard.Models
+﻿namespace OnScreenKeyboard.Models
 {
     public class TitleModel
     {
-        public List<string> DrvTitleList { get; set; }
+        public string DvrTitle { get; set; }
     }
 }

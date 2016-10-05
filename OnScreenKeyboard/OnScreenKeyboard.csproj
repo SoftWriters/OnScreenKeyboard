@@ -45,6 +45,7 @@
     <Compile Include="Models\TitleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\TitleRepository.cs" />
+    <Compile Include="VoiceKeyboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MockData\DvrTitles.txt">

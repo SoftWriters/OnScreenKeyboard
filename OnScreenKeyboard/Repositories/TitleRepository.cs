@@ -23,6 +23,14 @@ namespace OnScreenKeyboard.Repositories
                 var titles = File.ReadAllLines(_filename);
 
 
+                foreach (var t in titles)
+                {
+                    var tempModel = new TitleModel();
+                    tempModel.DvrTitle = t.ToString();
+                    returnTitles.Add(tempModel);
+
+
+                }
 
             }
             catch (Exception)
@@ -30,6 +38,8 @@ namespace OnScreenKeyboard.Repositories
 
                 throw;
             }
+            return returnTitles;
+
         }
     }
 
