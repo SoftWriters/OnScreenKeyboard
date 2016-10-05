@@ -10,37 +10,49 @@ namespace Fetzick.OnScreenKeyboard.OnScreenCommand
     {
         public static string GetCommand(string Command)
         {
-            string value = string.Empty;
+            // return
+            string pathToCharacters = string.Empty;
             
+            // Parse command into a character array
             Char[] letters = Command.ToCharArray();
             int[] letterPosition = new int[2];
             int[] oldLetterPosition = new int[2] { 1, 1 };
 
-
+            // Loop through each character in the command
             foreach (Char letter in letters)
             {
+                // If space... add "S" to path
                 if (letter == ' ')
                 {
-                    value += "S,";
+                    pathToCharacters += "S,";
                 }
                 else
                 {
+                    // Get position of character
                     letterPosition = GetPosition(letter);
-                    value += GetNewPosition(oldLetterPosition[0], oldLetterPosition[1], letterPosition[0], letterPosition[1]);
+                    
+                    // Find path
+                    pathToCharacters += GetNewPosition(oldLetterPosition[0], oldLetterPosition[1], letterPosition[0], letterPosition[1]);
+
+                    // Save current character position
                     oldLetterPosition = letterPosition;
-                    value += "#,";
+
+                    // Add "#" as select character
+                    pathToCharacters += "#,";
                 }
             }
 
             // Get rid of last comma
-            value = value.Remove(value.Length - 1);
+            pathToCharacters = pathToCharacters.Remove(pathToCharacters.Length - 1);
 
 
-            return value;
+            return pathToCharacters;
         }
 
         private static string GetNewPosition(int OldRow, int OldColumn, int NewRow, int NewColumn)
         {
+            // Find position on grid from previous position to current position.  If new character is in the row above, return "U".  Else return "D".
+            // If new character is to the left of current character, return "L".  Else return "R"
             string value = string.Empty;
             int rowDiff = 0;
             int colDiff = 0;
@@ -84,6 +96,16 @@ namespace Fetzick.OnScreenKeyboard.OnScreenCommand
 
         private static int[] GetPosition(Char letter)
         {
+            // Find character in grid.  If invalid, throw exception
+
+            // Grid:
+            // ABCDEF
+            // GHIJKL
+            // MNOPQR
+            // STUVWX
+            // YZ1234
+            // 567890
+
             int[] letterPosition = new int[2];
 
             switch (letter)
