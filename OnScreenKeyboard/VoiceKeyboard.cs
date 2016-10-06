@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Configuration;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OnScreenKeyboard.Models;
+using System;
 
 namespace OnScreenKeyboard
 {
@@ -12,43 +8,51 @@ namespace OnScreenKeyboard
         private string _title;
 
 
-        private string[,] _keyboard =
-        {
-            {
-                "ABCDEF"
-            },
-            {
-                "GHIJKL"
-            },
-            {
-                "MNOPQR"
-            },
-            {
-                "STUVWX"
-            },
-            {
-                "YZ1234"
-            },
-            {
-                "567890"
-            }
+        private readonly string[] _keyboard = { "ABCDEF", "GHIJKL", "MNOPQR", "STUVWX", "YZ1234", "567890" };
 
-        };
+        private Cords _currentCords = new Cords { x = 0, y = 0 };
 
-        private int startingPosition = 0;
+
 
 
         public string GetKeyStrokes(string title)
         {
             _title = title;
 
-            string returnValue = "";
-            int currentX = 0;
-            int currentY = 0;
-            bool done = false;
+            string buttonPresses = "";
+
+
+
+
 
 
             title = title.ToLower();
+            foreach (var c in title)
+            {
+
+                var charCords = GetCords(c.ToString().ToLower());
+                if (c.ToString() == " ")
+                {
+                    buttonPresses += "S,";
+
+                }
+                else
+                {
+                    buttonPresses += GetButtons(_currentCords, charCords);
+                }
+
+
+
+
+
+
+
+            }
+
+            buttonPresses = buttonPresses.Remove(buttonPresses.Length - 1);
+
+            return buttonPresses;
+
 
 
 
@@ -56,36 +60,66 @@ namespace OnScreenKeyboard
 
         }
 
-        private GetCords(char c)
+        private Cords GetCords(string c)
         {
-            for (var i = 0; _keyboard.Length; i++)
+            var cords = new Cords();
+
+            for (var i = 0; i < _keyboard.Length; i++)
             {
-                
+                if (_keyboard[i].ToLower().Contains(c))
+                {
+                    cords.y = i;
+                    cords.x = _keyboard[i].ToLower().IndexOf(c, StringComparison.Ordinal);
 
 
+                }
+            }
+            return cords;
+
+        }
+
+        private string GetButtons(Cords lastCord, Cords newCord)
+        {
+            string returnString = "";
+            if (lastCord.y < newCord.y)
+            {
+                for (var i = lastCord.y; i < newCord.y; i++)
+                {
+                    returnString += "D,";
+                }
 
 
+            }
+            if (lastCord.x < newCord.x)
+            {
+                for (var i = lastCord.x; i < newCord.x; i++)
+                {
+                    returnString += "R,";
+                }
+            }
 
+            if (lastCord.x > newCord.x)
+            {
+                for (var i = lastCord.x; i > newCord.x; i--)
+                {
+                    returnString += "L,";
 
+                }
+            }
+            if (lastCord.y > newCord.y)
+            {
+                for (var i = lastCord.y; i > newCord.y; i--)
+                {
+                    returnString += "U,";
 
+                }
+            }
+            _currentCords = newCord;
 
+            returnString += "#,";
 
+            return returnString;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
     }
 }
