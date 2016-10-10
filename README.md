@@ -1,3 +1,6 @@
+Rewriting on my Commodore 64 or GW-Basic so people can understand it.
+
+
 On Screen Keyboard
 ==================
 
