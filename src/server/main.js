@@ -2,7 +2,7 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import morgan from 'morgan';
 import { join } from 'path';
-import config from './config';
+import config from '../config';
 import router from './router';
 
 const app = express();
