@@ -1,0 +1,15 @@
+The code itself is there as an idea at best. I myself know it does not compile. I had gotten tripped up on some of the iterations to the point where it was only interating over my 'read in' string once, whereas I needed it to do it for all of the char values. 
+I began creating some class and then became self conscience of the time since I had last spoke with the recruiter, and submitted the new commits. 
+
+Albeit not fully constructed, much like the program itself I myself am an upcomer that welcomes a challenge but also recognizes there is much to learn. Outside of school I am a mostly self taught programmer, whom uses oppurtunities in my field to push the evolution of learning. I am extremely strong willed, persistent and result driven. I would have really hoped for my body of work to speak for me but again I did not want to let too much time pass before making a commit.
+
+Alot of the projects I have worked on had alot of the ground work laid constructers, classes, DB's, servers, etc. So I struggled a bit with establishing methods to be called and new classes/functions that could have been used to streamline the code and did not want to risk plagarizing anything form web; thought it be more fit to display true skills so if we were to proceed there would be no surprises. 
+
+Any how, I am a quick learner and with a small helper I am sure I would be a great addition to your organization with many contributions to be made.   
+
+This was the by far the most exciting/interesting/challengng forms of applications I came across in my time and was very pleased to have be granted a chance. 
+
+
+Thanks for the opp!! 
+
+--McKinley Reed
