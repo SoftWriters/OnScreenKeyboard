@@ -28,16 +28,41 @@ namespace OnScreenKeyboard
             this.DataContext = viewModel;
         }
 
+        /// <summary>
+        /// Event raised when the process string button is pressed in the view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ProcessStringBtn_Click(object sender, RoutedEventArgs e)
         {
-            viewModel.ProcessString(viewModel.LineToPrintTB);
+            viewModel.ProcessInputString();
         }
 
+        /// <summary>
+        /// Event raised when the update keyboard button is pressed in the view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateKeyboardButton_Click(object sender, RoutedEventArgs e)
         {
             viewModel.UpdateKeyboard();
         }
 
+        /// <summary>
+        /// Event raised when the process file button is pressed in the view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProcessFileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.ProcessFile();
+        }
+
+        /// <summary>
+        /// Allows the user to select the desired input file from the explorer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectFileBtn_Click(object sender, RoutedEventArgs e)
         {
             // Configure open file dialog box
@@ -55,11 +80,6 @@ namespace OnScreenKeyboard
                 // Open document
                 viewModel.InputFileName = dlg.FileName;
             }
-        }
-
-        private void ProcessFileBtn_Click(object sender, RoutedEventArgs e)
-        {
-            viewModel.ProcessFile();
         }
     }
 }

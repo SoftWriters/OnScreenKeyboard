@@ -15,6 +15,7 @@
         <Button x:Name="UpdateKeyboardButton" Content="Update Keyboard" HorizontalAlignment="Left" Margin="10,142,0,0" VerticalAlignment="Top" Width="99" Click="UpdateKeyboardButton_Click"/>
         <Button x:Name="SelectFileBtn" Content="Select File" HorizontalAlignment="Left" Margin="163,36,0,0" VerticalAlignment="Top" Width="75" Click="SelectFileBtn_Click"/>
         <Button x:Name="ProcessFileBtn" Content="Process File" HorizontalAlignment="Left" Margin="163,63,0,0" VerticalAlignment="Top" Width="75" Click="ProcessFileBtn_Click"/>
+        <TextBox x:Name="SelectedFileTB" Text="{Binding SelectedFileTB, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" Margin="243,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Focusable="False" IsEnabled="False"/>
 
     </Grid>
 </Window>

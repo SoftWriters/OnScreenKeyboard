@@ -14,6 +14,7 @@ namespace OnScreenKeyboard
         private string _textBlockTxt;
         private string _lineToPrintTB;
         private string _inputFileName;
+        private string _selectedFileTB;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -24,6 +25,7 @@ namespace OnScreenKeyboard
             this.TextBlockTxt = "Nothing Processed";
             this.LineToPrintTB = "Hello";
             this.InputFileName = "";
+            this.SelectedFileTB = "No File Selected";
             this.createKeyboardDict(KeyboardTB);
         }
 
@@ -55,50 +57,47 @@ namespace OnScreenKeyboard
         public string InputFileName
         {
             get { return _inputFileName; }
-            set { _inputFileName = value; }
+            set
+            {
+                _inputFileName = value;
+                this.SelectedFileTB = "File selected. Click Process File Button";
+                OnPropertyChanged("SelectedFileTB");
+            }
+        }
+
+        public string SelectedFileTB
+        {
+            get { return _selectedFileTB; }
+            set { _selectedFileTB = value; }
         }
 
         #endregion
 
         #region Public Functions
-        public string ProcessString(string line)
-        {
-            if (line != "")
-            {
-                /* always begin in the top left */
-                Coordinate currCoordinate = new Coordinate(0, 0);
-                TextBlockTxt = "";
-                line = line.ToUpper();
-
-                for (int currIndex = 0; currIndex < line.Length; ++currIndex)
-                {
-                    char currChar = line.ElementAt(currIndex);
-                    if (currChar != ' ')
-                    {
-                        Coordinate targetCoord = Keyboard[currChar];
-                        //todo: verify that the currChar is in the dictionary
-
-                        TextBlockTxt += currCoordinate.GetMovesTo(targetCoord);
-                        currCoordinate = targetCoord;
-                    }
-                    else
-                    {
-                        TextBlockTxt += "S,";
-                    }
-                }
-            }
-            TextBlockTxt = TextBlockTxt.TrimEnd(',');
-            OnPropertyChanged("TextBlockTxt");
-
-            return TextBlockTxt;
-        }
-
+        /// <summary>
+        /// Clears the current dictionary and constructs the new keyboard dictionary
+        /// </summary>
         public void UpdateKeyboard()
         {
             this.Keyboard.Clear();
             this.createKeyboardDict(KeyboardTB);
         }
 
+        /// <summary>
+        /// Takes the input string and determines the path required on the keyboard
+        /// </summary>
+        public void ProcessInputString()
+        {
+            TextBlockTxt = this.processString(this.LineToPrintTB);
+            OnPropertyChanged("TextBlockTxt");
+        }
+
+        /// <summary>
+        /// Reads in the specified file and determines the paths taken to print them with the keyboard.
+        /// 
+        /// Note that this does not handle any exceptions that could be raise. If the file doesn't
+        /// exist, the program will crash.
+        /// </summary>
         public void ProcessFile()
         {
             if (this.InputFileName != "")
@@ -112,7 +111,7 @@ namespace OnScreenKeyboard
                     new System.IO.StreamWriter("outputFile.txt");
                 while ((line = inputFile.ReadLine()) != null)
                 {
-                    string outputString = this.ProcessString(line);
+                    string outputString = this.processString(line);
                     outputFile.WriteLine(outputString);
                 }
 
@@ -121,6 +120,10 @@ namespace OnScreenKeyboard
             }
         }
 
+        /// <summary>
+        /// Communicates events to the view in order to update the desired fields
+        /// </summary>
+        /// <param name="propertyName"></param>
         private void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
@@ -130,6 +133,13 @@ namespace OnScreenKeyboard
         #endregion
 
         #region Private Functions
+        /// <summary>
+        /// Takes in the keyboard string and creates a dictionary out of the letters. Searching for
+        /// a given key in the dictionary is very quick which was why it was chosen.
+        /// 
+        /// Note that there are exceptions that could easily be raised. Todos note they should be handled
+        /// </summary>
+        /// <param name="keyboard"></param>
         private void createKeyboardDict(string keyboard)
         {
             int row = 0;
@@ -150,7 +160,42 @@ namespace OnScreenKeyboard
                 column = 0;
             }
         }
-        #endregion
 
+        /// <summary>
+        /// Takes a string and returns the keyboard path to print it
+        /// </summary>
+        /// <param name="line"></param>
+        /// <returns></returns>
+        private string processString(string line)
+        {
+            string text = "";
+            if (line != "")
+            {
+                /* always begin in the top left */
+                Coordinate currCoordinate = new Coordinate(0, 0);
+
+                line = line.ToUpper();
+
+                for (int currIndex = 0; currIndex < line.Length; ++currIndex)
+                {
+                    char currChar = line.ElementAt(currIndex);
+                    if (currChar != ' ')
+                    {
+                        Coordinate targetCoord = Keyboard[currChar];
+                        //todo: verify that the currChar is in the dictionary
+
+                        text += currCoordinate.GetMovesTo(targetCoord);
+                        currCoordinate = targetCoord;
+                    }
+                    else
+                    {
+                        text += "S,";
+                    }
+                }
+            }
+            text = text.TrimEnd(',');
+            return text;
+        }
+        #endregion
     }
 }

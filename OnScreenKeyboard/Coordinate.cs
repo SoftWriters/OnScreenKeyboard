@@ -44,6 +44,11 @@ namespace OnScreenKeyboard
 
 
         #region Public Functions
+        /// <summary>
+        /// Calculates how to move from the current keyboard position to the target position
+        /// </summary>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public string GetMovesTo(Coordinate target)
         {
             string retString = "";
