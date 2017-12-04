@@ -13,6 +13,7 @@ namespace OnScreenKeyboard
         private string _keyboardTB;
         private string _textBlockTxt;
         private string _lineToPrintTB;
+        private string _inputFileName;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -22,6 +23,7 @@ namespace OnScreenKeyboard
             this.KeyboardTB = "ABCDEF\nGHIJKL\nMNOPQR\nSTUVWX\nYZ1234\n567890";
             this.TextBlockTxt = "Nothing Processed";
             this.LineToPrintTB = "Hello";
+            this.InputFileName = "";
             this.createKeyboardDict(KeyboardTB);
         }
 
@@ -50,21 +52,27 @@ namespace OnScreenKeyboard
             set { _lineToPrintTB = value; }
         }
 
+        public string InputFileName
+        {
+            get { return _inputFileName; }
+            set { _inputFileName = value; }
+        }
+
         #endregion
 
         #region Public Functions
-        public void ProcessString()
+        public string ProcessString(string line)
         {
-            if (LineToPrintTB != "")
+            if (line != "")
             {
                 /* always begin in the top left */
                 Coordinate currCoordinate = new Coordinate(0, 0);
                 TextBlockTxt = "";
-                LineToPrintTB = LineToPrintTB.ToUpper();
+                line = line.ToUpper();
 
-                for (int currIndex = 0; currIndex < LineToPrintTB.Length; ++currIndex)
+                for (int currIndex = 0; currIndex < line.Length; ++currIndex)
                 {
-                    char currChar = LineToPrintTB.ElementAt(currIndex);
+                    char currChar = line.ElementAt(currIndex);
                     if (currChar != ' ')
                     {
                         Coordinate targetCoord = Keyboard[currChar];
@@ -81,12 +89,36 @@ namespace OnScreenKeyboard
             }
             TextBlockTxt = TextBlockTxt.TrimEnd(',');
             OnPropertyChanged("TextBlockTxt");
+
+            return TextBlockTxt;
         }
 
         public void UpdateKeyboard()
         {
             this.Keyboard.Clear();
             this.createKeyboardDict(KeyboardTB);
+        }
+
+        public void ProcessFile()
+        {
+            if (this.InputFileName != "")
+            {
+                string line;
+
+                //todo: handle file doesn't exist exception  
+                System.IO.StreamReader inputFile =
+                    new System.IO.StreamReader(this.InputFileName);
+                System.IO.StreamWriter outputFile =
+                    new System.IO.StreamWriter("outputFile.txt");
+                while ((line = inputFile.ReadLine()) != null)
+                {
+                    string outputString = this.ProcessString(line);
+                    outputFile.WriteLine(outputString);
+                }
+
+                inputFile.Close();
+                outputFile.Close();
+            }
         }
 
         private void OnPropertyChanged(string propertyName)
@@ -104,6 +136,7 @@ namespace OnScreenKeyboard
             int column = 0;
             string[] splitKeyboard = keyboard.Split('\n');
 
+            //todo: ensure all rows are the same length
             while (row < splitKeyboard.Count())
             {
                 while (column < splitKeyboard[row].Count())

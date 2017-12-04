@@ -30,12 +30,36 @@ namespace OnScreenKeyboard
 
         private void ProcessStringBtn_Click(object sender, RoutedEventArgs e)
         {
-            viewModel.ProcessString();
+            viewModel.ProcessString(viewModel.LineToPrintTB);
         }
 
         private void UpdateKeyboardButton_Click(object sender, RoutedEventArgs e)
         {
             viewModel.UpdateKeyboard();
+        }
+
+        private void SelectFileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            // Configure open file dialog box
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.FileName = "Document"; // Default file name
+            dlg.DefaultExt = ".txt"; // Default file extension
+            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
+
+            // Show open file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Process open file dialog box results
+            if (result == true)
+            {
+                // Open document
+                viewModel.InputFileName = dlg.FileName;
+            }
+        }
+
+        private void ProcessFileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.ProcessFile();
         }
     }
 }
