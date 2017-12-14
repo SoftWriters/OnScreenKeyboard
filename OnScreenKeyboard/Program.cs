@@ -27,11 +27,21 @@ namespace OnScreenKeyboard
 
             IScreenKeyboard keyboard  = (IScreenKeyboard)Activator.CreateInstance(Type.GetType(ConfigurationManager.AppSettings["ScreenKeyboardInst"]));
 
-            foreach (string str in inputStrings)
+            try
             {
-                Console.WriteLine(keyboard.StringToKeyboard(str));
+                foreach (string str in inputStrings)
+                {
+                    string output = keyboard.StringToKeyboard(str);
+                    Console.WriteLine(output);
+
+                    // Validating
+                    Console.WriteLine(keyboard.KeyboardToString(output));
+                }
             }
-            
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             
             Console.ReadKey();
         }
