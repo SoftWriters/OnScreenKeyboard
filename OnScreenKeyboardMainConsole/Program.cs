@@ -1,5 +1,4 @@
-﻿using KeyboardInterface;
-using System;
+﻿using System;
 using System.Configuration;
 using System.IO;
 using System.Text;
@@ -25,16 +24,20 @@ namespace OnScreenKeyboard
                 return;
             }
 
-            IScreenKeyboard keyboard  = (IScreenKeyboard)Activator.CreateInstance(Type.GetType(ConfigurationManager.AppSettings["ScreenKeyboardInst"]));
-
             try
             {
+
+                string typename = ConfigurationManager.AppSettings["ScreenKeyboard"];
+                Type type = Type.GetType(typename);
+
+                IScreenKeyboard keyboard = (IScreenKeyboard)Activator.CreateInstance(type);
+
                 foreach (string str in inputStrings)
                 {
                     string output = keyboard.StringToKeyboard(str);
                     Console.WriteLine(output);
 
-                    // Validating
+                    // Validating output by inverse operation
                     Console.WriteLine(keyboard.KeyboardToString(output));
                 }
             }
