@@ -1,0 +1,11 @@
+c:\users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\DVRVoiceToKeyboard.deps.json
+c:\users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\DVRVoiceToKeyboard.runtimeconfig.json
+c:\users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\DVRVoiceToKeyboard.runtimeconfig.dev.json
+c:\users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\DVRVoiceToKeyboard.dll
+c:\users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\DVRVoiceToKeyboard.pdb
+c:\users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\obj\Release\netcoreapp2.0\DVRVoiceToKeyboard.csproj.CoreCompileInputs.cache
+c:\users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\obj\Release\netcoreapp2.0\DVRVoiceToKeyboard.AssemblyInfoInputs.cache
+c:\users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\obj\Release\netcoreapp2.0\DVRVoiceToKeyboard.AssemblyInfo.cs
+c:\users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\obj\Release\netcoreapp2.0\DVRVoiceToKeyboard.dll
+c:\users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\obj\Release\netcoreapp2.0\DVRVoiceToKeyboard.pdb
+c:\users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\obj\Release\netcoreapp2.0\DVRVoiceToKeyboard.csprojResolveAssemblyReference.cache

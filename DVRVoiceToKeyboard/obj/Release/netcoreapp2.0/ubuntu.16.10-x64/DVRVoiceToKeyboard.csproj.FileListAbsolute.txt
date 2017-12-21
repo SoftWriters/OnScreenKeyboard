@@ -1,0 +1,13 @@
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\ubuntu.16.10-x64\libhostpolicy.so
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\ubuntu.16.10-x64\libhostfxr.so
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\ubuntu.16.10-x64\DVRVoiceToKeyboard
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\ubuntu.16.10-x64\DVRVoiceToKeyboard.deps.json
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\ubuntu.16.10-x64\DVRVoiceToKeyboard.runtimeconfig.json
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\ubuntu.16.10-x64\DVRVoiceToKeyboard.runtimeconfig.dev.json
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\ubuntu.16.10-x64\DVRVoiceToKeyboard.dll
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\bin\Release\netcoreapp2.0\ubuntu.16.10-x64\DVRVoiceToKeyboard.pdb
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\obj\Release\netcoreapp2.0\ubuntu.16.10-x64\DVRVoiceToKeyboard.csproj.CoreCompileInputs.cache
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\obj\Release\netcoreapp2.0\ubuntu.16.10-x64\DVRVoiceToKeyboard.AssemblyInfoInputs.cache
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\obj\Release\netcoreapp2.0\ubuntu.16.10-x64\DVRVoiceToKeyboard.AssemblyInfo.cs
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\obj\Release\netcoreapp2.0\ubuntu.16.10-x64\DVRVoiceToKeyboard.dll
+C:\Users\hexpixel\source\repos\DVRVoiceToKeyboard\DVRVoiceToKeyboard\obj\Release\netcoreapp2.0\ubuntu.16.10-x64\DVRVoiceToKeyboard.pdb
