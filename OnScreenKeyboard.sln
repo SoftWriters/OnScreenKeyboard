@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnScreenKeyboard", "OnScreenKeyboard\OnScreenKeyboard.csproj", "{EC60CD1F-7A28-416D-9051-6BDBB4C2C401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnScreenKeyboard.UnitTests", "OnScreenKeyboard.UnitTests\OnScreenKeyboard.UnitTests.csproj", "{BD23CB82-0137-4C8B-A325-0F68B9B55330}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnScreenKeyboard.ConsoleProgram", "OnScreenKeyboard.Console\OnScreenKeyboard.ConsoleProgram.csproj", "{CBABBDD8-7C02-4393-B715-4C111B20E5C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC60CD1F-7A28-416D-9051-6BDBB4C2C401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC60CD1F-7A28-416D-9051-6BDBB4C2C401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC60CD1F-7A28-416D-9051-6BDBB4C2C401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC60CD1F-7A28-416D-9051-6BDBB4C2C401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD23CB82-0137-4C8B-A325-0F68B9B55330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD23CB82-0137-4C8B-A325-0F68B9B55330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD23CB82-0137-4C8B-A325-0F68B9B55330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD23CB82-0137-4C8B-A325-0F68B9B55330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBABBDD8-7C02-4393-B715-4C111B20E5C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBABBDD8-7C02-4393-B715-4C111B20E5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBABBDD8-7C02-4393-B715-4C111B20E5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBABBDD8-7C02-4393-B715-4C111B20E5C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

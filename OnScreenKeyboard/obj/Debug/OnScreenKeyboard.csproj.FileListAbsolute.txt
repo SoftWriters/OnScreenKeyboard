@@ -1,0 +1,5 @@
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard\bin\Debug\OnScreenKeyboard.dll
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard\bin\Debug\OnScreenKeyboard.pdb
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard\obj\Debug\OnScreenKeyboard.csprojResolveAssemblyReference.cache
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard\obj\Debug\OnScreenKeyboard.dll
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard\obj\Debug\OnScreenKeyboard.pdb
