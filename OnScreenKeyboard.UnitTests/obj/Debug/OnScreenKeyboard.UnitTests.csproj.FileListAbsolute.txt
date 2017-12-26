@@ -1,0 +1,8 @@
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.UnitTests\bin\Debug\OnScreenKeyboard.UnitTests.dll
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.UnitTests\bin\Debug\OnScreenKeyboard.UnitTests.pdb
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.UnitTests\bin\Debug\OnScreenKeyboard.dll
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.UnitTests\bin\Debug\OnScreenKeyboard.pdb
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.UnitTests\obj\Debug\OnScreenKeyboard.UnitTests.csprojResolveAssemblyReference.cache
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.UnitTests\obj\Debug\OnScreenKeyboard.UnitTests.dll
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.UnitTests\obj\Debug\OnScreenKeyboard.UnitTests.pdb

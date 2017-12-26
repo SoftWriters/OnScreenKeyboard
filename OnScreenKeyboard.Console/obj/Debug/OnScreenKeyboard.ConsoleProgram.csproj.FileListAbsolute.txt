@@ -1,0 +1,14 @@
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.Console\obj\Debug\OnScreenKeyboard.ConsoleProgram.csprojResolveAssemblyReference.cache
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.Console\bin\Debug\OnScreenKeyboard.ConsoleProgram.exe.config
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.Console\bin\Debug\OnScreenKeyboard.ConsoleProgram.exe
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.Console\bin\Debug\OnScreenKeyboard.ConsoleProgram.pdb
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.Console\bin\Debug\Ninject.dll
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.Console\bin\Debug\OnScreenKeyboard.dll
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.Console\bin\Debug\OnScreenKeyboard.pdb
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.Console\bin\Debug\Ninject.xml
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.Console\obj\Debug\OnScreenKeyboard.ConsoleProgram.exe
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.Console\obj\Debug\OnScreenKeyboard.ConsoleProgram.pdb
+H:\Business\Softwriters\Keyboard\OnScreenKeyboard\OnScreenKeyboard.Console\bin\Debug\InputFile.txt
+C:\Users\Brian\OneDrive\Dev\Git repositories\JobSearch\Softwriters\OnScreenKeyboard\OnScreenKeyboard.Console\bin\Debug\OnScreenKeyboard.ConsoleProgram.exe.config
+C:\Users\Brian\OneDrive\Dev\Git repositories\JobSearch\Softwriters\OnScreenKeyboard\OnScreenKeyboard.Console\obj\Debug\OnScreenKeyboard.ConsoleProgram.exe
+C:\Users\Brian\OneDrive\Dev\Git repositories\JobSearch\Softwriters\OnScreenKeyboard\OnScreenKeyboard.Console\obj\Debug\OnScreenKeyboard.ConsoleProgram.pdb
