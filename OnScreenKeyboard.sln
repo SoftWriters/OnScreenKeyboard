@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyboardInterface", "KeyboardInterface\KeyboardInterface.csproj", "{504B347C-863A-413D-A848-BC75930C9232}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnScreenKeyboardMainConsole", "OnScreenKeyboardMainConsole\OnScreenKeyboardMainConsole.csproj", "{EFAE1C83-D571-4482-85F9-CB532830AC09}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B550CF85-B60B-4246-B3CF-DB0AADEDF376} = {B550CF85-B60B-4246-B3CF-DB0AADEDF376}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenKeyboard", "OnScreenKeyboard\ScreenKeyboard.csproj", "{B550CF85-B60B-4246-B3CF-DB0AADEDF376}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{504B347C-863A-413D-A848-BC75930C9232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{504B347C-863A-413D-A848-BC75930C9232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{504B347C-863A-413D-A848-BC75930C9232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{504B347C-863A-413D-A848-BC75930C9232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFAE1C83-D571-4482-85F9-CB532830AC09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFAE1C83-D571-4482-85F9-CB532830AC09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFAE1C83-D571-4482-85F9-CB532830AC09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFAE1C83-D571-4482-85F9-CB532830AC09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B550CF85-B60B-4246-B3CF-DB0AADEDF376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B550CF85-B60B-4246-B3CF-DB0AADEDF376}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B550CF85-B60B-4246-B3CF-DB0AADEDF376}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B550CF85-B60B-4246-B3CF-DB0AADEDF376}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

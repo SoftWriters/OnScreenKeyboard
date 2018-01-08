@@ -1,0 +1,5 @@
+#VS Files
+.vs/
+bin/
+obj/
+*.csproj.user
