@@ -1,0 +1,8 @@
+E:\lexili work\Sayed\DVRSample\DVRSample\bin\Debug\DVRSample.exe.config
+E:\lexili work\Sayed\DVRSample\DVRSample\bin\Debug\DVRSample.exe
+E:\lexili work\Sayed\DVRSample\DVRSample\bin\Debug\DVRSample.pdb
+E:\lexili work\Sayed\DVRSample\DVRSample\obj\Debug\DVRSample.Form1.resources
+E:\lexili work\Sayed\DVRSample\DVRSample\obj\Debug\DVRSample.Properties.Resources.resources
+E:\lexili work\Sayed\DVRSample\DVRSample\obj\Debug\DVRSample.csproj.GenerateResource.Cache
+E:\lexili work\Sayed\DVRSample\DVRSample\obj\Debug\DVRSample.exe
+E:\lexili work\Sayed\DVRSample\DVRSample\obj\Debug\DVRSample.pdb
