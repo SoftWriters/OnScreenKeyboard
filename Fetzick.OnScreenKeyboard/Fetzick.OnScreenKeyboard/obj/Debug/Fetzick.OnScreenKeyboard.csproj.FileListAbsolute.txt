@@ -1,0 +1,10 @@
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.OnScreenKeyboard\bin\Debug\Fetzick.OnScreenKeyboard.exe.config
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.OnScreenKeyboard\bin\Debug\Fetzick.OnScreenKeyboard.exe
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.OnScreenKeyboard\bin\Debug\Fetzick.OnScreenKeyboard.pdb
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.OnScreenKeyboard\bin\Debug\Fetzick.OnScreenKeyboard.OnScreenCommand.dll
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.OnScreenKeyboard\bin\Debug\Fetzick.Utilities.LogFile.dll
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.OnScreenKeyboard\bin\Debug\Fetzick.OnScreenKeyboard.OnScreenCommand.pdb
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.OnScreenKeyboard\bin\Debug\Fetzick.Utilities.LogFile.pdb
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.OnScreenKeyboard\obj\Debug\Fetzick.OnScreenKeyboard.csprojResolveAssemblyReference.cache
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.OnScreenKeyboard\obj\Debug\Fetzick.OnScreenKeyboard.exe
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.OnScreenKeyboard\obj\Debug\Fetzick.OnScreenKeyboard.pdb

@@ -1,0 +1,5 @@
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.Utilities.LogFile\bin\Debug\Fetzick.Utilities.LogFile.dll
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.Utilities.LogFile\bin\Debug\Fetzick.Utilities.LogFile.pdb
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.Utilities.LogFile\obj\Debug\Fetzick.Utilities.LogFile.csprojResolveAssemblyReference.cache
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.Utilities.LogFile\obj\Debug\Fetzick.Utilities.LogFile.dll
+C:\MyCode\OnScreenKeyboard\Fetzick.OnScreenKeyboard\Fetzick.Utilities.LogFile\obj\Debug\Fetzick.Utilities.LogFile.pdb
