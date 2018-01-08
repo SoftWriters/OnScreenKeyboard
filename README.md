@@ -1,3 +1,10 @@
+Rewriting on my Commodore 64 (after I get it out of attic) or GW-Basic so people can understand it.
+
+To Start it:    load "OnScreenKeyboard", 8, 1 
+
+I was probably developing code while most guys that looked at it were in diapers.  
+
+
 On Screen Keyboard
 ==================
 
