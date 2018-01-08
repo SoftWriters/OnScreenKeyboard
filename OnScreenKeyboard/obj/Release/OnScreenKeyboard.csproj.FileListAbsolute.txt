@@ -1,0 +1,15 @@
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\bin\Release\OnScreenKeyboard.exe.config
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\bin\Release\OnScreenKeyboard.exe
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\bin\Release\OnScreenKeyboard.pdb
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\obj\Release\OnScreenKeyboard.csprojResolveAssemblyReference.cache
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\obj\Release\MainWindow.g.cs
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\obj\Release\App.g.cs
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\obj\Release\OnScreenKeyboard_MarkupCompile.cache
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\obj\Release\OnScreenKeyboard_MarkupCompile.lref
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\obj\Release\MainWindow.baml
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\obj\Release\OnScreenKeyboard.g.resources
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\obj\Release\OnScreenKeyboard.Properties.Resources.resources
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\obj\Release\OnScreenKeyboard.csproj.GenerateResource.Cache
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\obj\Release\OnScreenKeyboard.csproj.CoreCompileInputs.cache
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\obj\Release\OnScreenKeyboard.exe
+C:\Users\Mike\source\repos\OnScreenKeyboard\OnScreenKeyboard\obj\Release\OnScreenKeyboard.pdb
