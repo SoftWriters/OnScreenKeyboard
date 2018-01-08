@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
+
+using OnScreenKeyboard.Classes;
 
 namespace OnScreenKeyboard.Controllers
 {
@@ -13,16 +12,12 @@ namespace OnScreenKeyboard.Controllers
             return View();
         }
 
-        public ActionResult About()
+        [HttpPost]
+        public ActionResult Index(HttpPostedFileBase InputFile)
         {
-            ViewBag.Message = "Your application description page.";
+            Keyboard thisKeyboard = new Keyboard(InputFile);
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Output = thisKeyboard.KeyboardPathOutput;
 
             return View();
         }
