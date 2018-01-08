@@ -28,7 +28,7 @@ namespace OnScreenKeyboard.Logic
 
             foreach(char c in input.Trim().ToUpper())
             {
-                char cc = char.IsPunctuation(c) ? ' ' : c;
+                char cc = (char.IsPunctuation(c) || char.IsSymbol(c)) ? ' ' : c;
                 if (cc == ' ')
                 {
                     if (lastCharWasSpace) continue;
@@ -43,23 +43,8 @@ namespace OnScreenKeyboard.Logic
         }
 
         /// <summary>
-        /// Convert an input string into a sequence of key locations seperated by spaces.
+        /// Convert an input string into instructions to move the cursor around the on screen keyboard.
         /// </summary>
-        public List<List<KeyLocation>> ToKeyLocationSequences(string input)
-            => ScrubInput(input)?.Split(' ')
-                ?.Select(word =>
-                    word.Select(c => _keyboardLayout.GetKeyLocation(c))
-                        .Where(kl => kl != null)
-                        .Cast<KeyLocation>()
-                        .ToList())
-                ?.ToList();
-
-
-        /// <summary>
-        /// Convert an input string into fin
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
         public string ToCursorInstructions(string input)
         {
             var keySequences = ToKeyLocationSequences(input);
@@ -68,7 +53,7 @@ namespace OnScreenKeyboard.Logic
 
             var currentLocation = new KeyLocation { Row = 0, Column = 0 };
             return 
-                string.Join("S,",
+                string.Join(",S,",
                     keySequences.Select(seq => string.Join(",",
                         seq.Select(
                             keyLoc =>
@@ -80,6 +65,21 @@ namespace OnScreenKeyboard.Logic
 
         }
 
+        /// <summary>
+        /// Convert an input string into a sequence of key locations seperated by spaces.
+        /// </summary>
+        private List<List<KeyLocation>> ToKeyLocationSequences(string input)
+            => ScrubInput(input)?.Split(' ')
+                ?.Select(word =>
+                    word.Select(c => _keyboardLayout.GetKeyLocation(c))
+                        .Where(kl => kl != null)
+                        .Cast<KeyLocation>()
+                        .ToList())
+                ?.ToList();
+
+        /// <summary>
+        /// Generate the instructions to move from one key to another.
+        /// </summary>
         private string ToRelativeCursorInstructions(KeyLocation currentLocation, KeyLocation targetLocation)
         {
             var diff = targetLocation - currentLocation;
