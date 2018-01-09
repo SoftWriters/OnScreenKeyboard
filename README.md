@@ -1,6 +1,23 @@
 On Screen Keyboard
 ==================
 
+Quick Start
+-
+This solution is built on dot net core 2.0.  It requires the dot net core 2.0 SDK to be installed to build.  This is installed automatically with the latest version of Visual Studio 2017.
+
+1. Run `PublishBin.cmd` to build the solution to the `bin` folder.
+2. Run `RunTest.cmd` to pipe the data in the file `data\TestData.txt` through the `MapToKeyboardInput` utility and write the output to `stdout`.
+
+The Solution
+-
+`MapToKeyboardInput.exe` is a utility that reads lines from `stdin` and translates the text to cursor instructions, which are written to `stdout`.  This allows for easy use in scripts, the most likely use for a utility like this.  To read the test data and write it to a file called `output.txt` the command would be:
+
+	cat data\TestData.txt | bin\MapToKeyboardInput.exe > output.txt
+    
+In the solution, the core logic is broken out into it's own assembly that could be referenced by other projects that need this functionality.  The MapToKeyboardInput project is a thin command line interface to the OnScreenKeyboard.Logic API.  The solution also contains some simple tests of the API.
+
+---
+
 The Problem
 -----------
 On screen keyboards are the bane of DVR users. To help alleviate the pain, one local company is asking you to implement part of a voice to text search for their DVR by developing an algorithm to script the on screen keyboard.
