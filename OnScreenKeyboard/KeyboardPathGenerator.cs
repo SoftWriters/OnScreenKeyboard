@@ -34,7 +34,7 @@ namespace SoftWriters {
                     return "Invalid input: " + testCase;
                 }
                 else {
-                    shorthand.Add(ShorthandForMoveTo(character));
+                    shorthand.Add(shorthandForMoveTo(character));
                 }
             }
 
@@ -42,31 +42,43 @@ namespace SoftWriters {
         }
 
         //Assumes validated input
-        public string ShorthandForMoveTo(char character) {
+        private string shorthandForMoveTo(char character) {
             var characterPosition = keyPositions[character];
             var distance = characterPosition - cursor;
 
             cursor = characterPosition;
 
             var shorthand = "";
-            if (distance.Y < 0) {
-                shorthand += new string('U', -distance.Y);
+            if(distance.Y > 0) {
+                shorthand += optimizedDirection('D', 'U', distance.Y, Keyboard.RowCount);
             }
-            if (distance.Y > 0) {
-                shorthand += new string('D', distance.Y);
+            else if(distance.Y < 0) {
+                shorthand += optimizedDirection('U', 'D', -distance.Y, Keyboard.RowCount);
             }
-            if (distance.X > 0) {
-                shorthand += new string('R', distance.X);
+            if(distance.X > 0) {
+                shorthand += optimizedDirection('R', 'L', distance.X, Keyboard.ColumnCount);
             }
-            if (distance.X < 0) {
-                shorthand += new string('L', -distance.X);
+            else if(distance.X < 0) {
+                shorthand += optimizedDirection('L', 'R', -distance.X, Keyboard.ColumnCount);
             }
 
-            if(shorthand == "") {
+            if (shorthand == "") {
                 return "#";
             }
             else {
-                return String.Join(",", shorthand) + ",#";
+                return String.Join(",", shorthand.ToCharArray()) + ",#";
+            }
+        }
+
+        
+        private string optimizedDirection(char forward, char backward, int distance, int dimensionSize) {
+            if (distance == 0) return "";
+
+            if(distance <= dimensionSize / 2.0) {
+                return new string(forward, distance);
+            }
+            else {
+                return new string(backward, dimensionSize - distance);
             }
         }
 

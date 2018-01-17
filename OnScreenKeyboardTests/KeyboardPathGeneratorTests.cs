@@ -30,23 +30,23 @@ namespace OnScreenKeyboardTests {
         }
 
         [TestMethod]
-        public void ShorthandForABC() {
+        public void SimpleRight() {
             var shorthand = generator.GenerateShorthandFrom("ABC");
             var expected = "#,R,#,R,#";
             Assert.AreEqual(expected, shorthand);
         }
 
         [TestMethod]
-        public void ShorthandForAGM() {
+        public void SimpleDown() {
             var shorthand = generator.GenerateShorthandFrom("AGM");
             var expected = "#,D,#,D,#";
             Assert.AreEqual(expected, shorthand);
         }
 
         [TestMethod]
-        public void ShorthandForA50() {
-            var shorthand = generator.GenerateShorthandFrom("A50");
-            var expected = "#,U,#,L,#";
+        public void OptimizedWrapping() {
+            var shorthand = generator.GenerateShorthandFrom("A50FA");
+            var expected = "#,U,#,L,#,D,#,R,#";
             Assert.AreEqual(expected, shorthand);
         }
 
@@ -61,6 +61,13 @@ namespace OnScreenKeyboardTests {
         public void ShorthandForA_A() {
             var shorthand = generator.GenerateShorthandFrom("A A");
             var expected = "#,S,#";
+            Assert.AreEqual(expected, shorthand);
+        }
+
+        [TestMethod]
+        public void InvalidInput() {
+            var shorthand = generator.GenerateShorthandFrom("!");
+            var expected = "Invalid input: !";
             Assert.AreEqual(expected, shorthand);
         }
 
