@@ -5,9 +5,10 @@ using SoftWriters;
 namespace OnScreenKeyboardTests {
     [TestClass]
     public class KeyboardPathGeneratorTests {
-        [TestMethod]
-        public void TestMethod1() {
+        [TestMethod, Ignore]
+        public void ExampleTest() {
             var keyboard = new Keyboard();
+
         }
     }
 }
