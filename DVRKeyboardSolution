@@ -1,0 +1,177 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Assignments;
+namespace Assignments
+{
+    public partial class Form1 : Form
+    {
+        List<KeyboardCharacter> keyBoardCharacters = new List<KeyboardCharacter>();
+        public Form1()
+        {
+            InitializeComponent();
+            txtInput.Text = "IT CROWD";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int[,] matrix = new int[6, 6];
+            string keyboardCharString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+            
+
+             keyBoardCharacters = InitializeKeyboard(keyboardCharString);
+
+            txtOutput.Text = GenerateKeyboardTraversePath(txtInput.Text);
+        }
+
+        public string GenerateKeyboardTraversePath(string input)
+        {
+            string output = string.Empty;
+            KeyboardCharacter startingCharacter = new KeyboardCharacter();
+            try
+            {
+                startingCharacter = GetKeyboardCharacter('A');
+                if (!string.IsNullOrEmpty(input))
+                {
+                    for (int i = 0; i < input.Length; i++)
+                    {
+                        char charValue = input[i];
+
+                        switch (charValue)
+                        {
+                            case ' ':
+                                output += "S" + ",";
+                                break;
+                            default:
+                                output += GetOutPutString(ref startingCharacter, charValue);
+                                break;
+                        }                       
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return output;
+        }
+
+
+        public string GetOutPutString(ref KeyboardCharacter startingCharacter, char charValue)
+        {
+            string outputString = string.Empty;
+            try
+            {
+                if (!string.IsNullOrEmpty(charValue.ToString()))
+                {
+                    KeyboardCharacter character = GetKeyboardCharacter(charValue);
+
+                    if (character != null)
+                    {
+                        if (startingCharacter.CharValue == charValue)
+                        {
+                            outputString += "#" + ",";
+                        }
+                        else
+                        {
+                            if (startingCharacter.xValue < character.xValue)
+                            {
+                                int difference = character.xValue - startingCharacter.xValue;
+                                for (int i = 0; i < difference; i++)
+                                {
+                                    outputString += "D" + ",";
+                                }
+                            }
+                            else
+                            {
+                                int difference = startingCharacter.xValue - character.xValue;
+                                for (int i = 0; i < difference; i++)
+                                {
+                                    outputString += "U" + ",";
+                                }
+                            }
+
+
+                            if (startingCharacter.yValue < character.yValue)
+                            {
+                                int difference = character.yValue - startingCharacter.yValue;
+                                for (int i = 0; i < difference; i++)
+                                {
+                                    outputString += "R" + ",";
+                                }
+                            }
+                            else
+                            {
+                                int difference = startingCharacter.yValue - character.yValue;
+                                for (int i = 0; i < difference; i++)
+                                {
+                                    outputString += "L" + ",";
+                                }
+                            }
+
+
+                            outputString += "#" + ",";
+                            startingCharacter = character;
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return outputString;
+        }
+
+        public KeyboardCharacter GetKeyboardCharacter(char charValue)
+        {
+            KeyboardCharacter keyboardCharacter = null;
+            try
+            {
+                if (!string.IsNullOrEmpty(charValue.ToString()))
+                {
+                    keyboardCharacter = keyBoardCharacters.Where(c => c.CharValue == charValue).FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return keyboardCharacter;
+        }
+
+        public List<KeyboardCharacter> InitializeKeyboard(string keyboardCharString)
+        {
+            List<KeyboardCharacter> keyBoardCharacters = new List<KeyboardCharacter>();
+            int index = 0;
+            try
+            {
+                for (int i= 0;i < 6; i++)
+                {
+                    for(int j= 0;j< 6;j++)
+                    {
+                        KeyboardCharacter character = new KeyboardCharacter
+                        {
+                            CharValue = keyboardCharString[index],
+                            xValue = i,
+                            yValue = j
+                        };
+                        keyBoardCharacters.Add(character);
+                        index++;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+            return keyBoardCharacters;
+        }
+    }
+}
