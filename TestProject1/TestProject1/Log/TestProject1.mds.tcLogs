@@ -39,6 +39,60 @@
 				<Prp name="relpath" type="S" value="3_5_2018_9_27 AM_59_367\Description.tcLog"/>
 				<Prp name="status" type="I" value="0"/>
 			</Node>
+			<Node name="log idx=0002">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43165.78472625"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{26F9B16A-66A5-4A8C-BE73-BBC43CBA0B51}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [cae_OSK\main]"/>
+				<Prp name="relpath" type="S" value="3_6_2018_6_50 PM_00_348\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0003">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43165.7875280556"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{700A5025-1CDC-41B3-B54D-051A2714B35A}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [cae_OSK\main]"/>
+				<Prp name="relpath" type="S" value="3_6_2018_6_54 PM_02_424\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0004">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43165.7990946644"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{597EDA52-2C98-4222-8DBA-166571DC24E0}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [cae_OSK\main]"/>
+				<Prp name="relpath" type="S" value="3_6_2018_7_10 PM_41_779\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0005">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43165.8006273843"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{F42F93F2-4599-4E89-BE38-A98A01E9A744}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [cae_OSK\main]"/>
+				<Prp name="relpath" type="S" value="3_6_2018_7_12 PM_54_206\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0006">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43165.8021188079"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{8CEE3AE4-20F0-4F95-9A61-41EA4E8316A8}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [cae_OSK\main]"/>
+				<Prp name="relpath" type="S" value="3_6_2018_7_15 PM_03_65\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0007">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43165.8052559375"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{1F539396-5665-49DD-B1A4-EEEDCA6D4D9E}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [cae_OSK\main]"/>
+				<Prp name="relpath" type="S" value="3_6_2018_7_19 PM_34_113\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
 		</Node>
 		<Prp name="signature" type="S" value="{681DCC69-A39F-4C4D-8E7D-B2D9362FAF4F}"/>
 		<Prp name="version" type="S" value="11.0"/>

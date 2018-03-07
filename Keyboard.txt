@@ -26,3 +26,14 @@ D,R,R,#,D,D,L,#,S,U,U,U,R,#,D,D,R,R,R,#,L,L,L,#,D,R,R,#,U,U,U,L,#
 #,D,D,D,R,R,R,R,R,#
 #,D,D,D,D,#
 #,D,D,D,D,R,#
+#,D,D,D,D,R,R,#
+#,D,D,D,D,R,R,R,#
+#,D,D,D,D,R,R,R,R,#
+#,D,D,D,D,R,R,R,R,R,#
+#,D,D,D,D,D,#
+#,D,D,D,D,D,R,#
+#,D,D,D,D,D,R,R,#
+#,D,D,D,D,D,R,R,R,#
+#,D,D,D,D,D,R,R,R,R,#
+#,D,D,D,D,D,R,R,R,R,R,#
+
