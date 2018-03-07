@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Root signature="{5238AF17-5FE2-48FF-8BCC-9803A975A4F4}" version="12.0">
+	<children>
+		<child name="Files" key="{4A96A207-E3EF-4BB2-B962-21206B36943F}" type="Files" typeId="{AA2F3067-5C9B-4CCF-89D4-1F93CE1C510F}" pluginName="Stores">
+			<data path="Files.tcFiles" />
+		</child>
+	</children>
+	<folders />
+</Root>

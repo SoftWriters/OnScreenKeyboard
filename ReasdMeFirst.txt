@@ -1,0 +1,14 @@
+Solution was written using the TestComplete IDE and JavaScript code.
+The JavaScript can be found in ..\cae_OnScreenKeyboard\TestProject1\TestProject1\Script
+
+I used this approach because this has been the dev environment I have used for the last 7+ years to develop automated test frameworks.
+
+The solution I came up with is reasonably straightforward but unfortunately cannot be run in a browser that supports JavaScript because I am using I/O functions inherent in the TestComplete scripting engine.
+
+If you wish to run the solution, a TestComplete trial can be downloaded for free.  
+To open the project, navigate to cae_OnScreenKeyboard\TestProject1 and select the TestProject1.pjs file
+Then navigate to the script folder to run it.
+
+Thank you,
+
+Charles
