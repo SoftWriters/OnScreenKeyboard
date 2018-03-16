@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/OnScreenKeyboardScripter/.vs/OnScreenKeyboardScripter/v15
+/OnScreenKeyboardScripter/OnScreenKeyboardScripter.Demo/bin/Debug
+/OnScreenKeyboardScripter/OnScreenKeyboardScripter.Demo/obj
+/OnScreenKeyboardScripter/OnScreenKeyboardScripter.Lib/bin/Debug
+/OnScreenKeyboardScripter/OnScreenKeyboardScripter.Lib/obj
+/OnScreenKeyboardScripter/OnScreenKeyboardScripter.Test/bin/Debug
+/OnScreenKeyboardScripter/OnScreenKeyboardScripter.Test/obj
+/OnScreenKeyboardScripter/packages

@@ -1,6 +1,26 @@
 On Screen Keyboard
 ==================
 
+The Solution
+------------
+There are three source folders to the solution:
+
+##### OnScreenKeyboardScripter.Demo
+
+Simple console application built off OnScreenKeyboardScripter.Lib that reads in a text file and writes out screen keyboard action "path" per line.
+
+##### OnScreenKeyboardScripter.Lib
+
+The library for transforming an input into keyboard actions.  Keyboard and scripting are decoupled so other keyboard and scripting algorithms can be used.
+
+NOTE: exceptions are not handled here - they are allowed to bubble out of OnScreenKeyboardScripter.Lib.  An example of handling exceptions from there can be seen in the OnScreenKeyboardScripter.Demo project.
+
+##### OnScreenKeyboardScripter.Test
+
+Unit tests for OnScreenKeyboardScripter.Lib.
+
+
+
 The Problem
 -----------
 On screen keyboards are the bane of DVR users. To help alleviate the pain, one local company is asking you to implement part of a voice to text search for their DVR by developing an algorithm to script the on screen keyboard.
