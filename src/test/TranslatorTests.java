@@ -53,5 +53,22 @@ public class TranslatorTests {
 
   }
 
+  @Test
+  public void test_translator_getSingleCharacterKeyboardInstructions() {
+    
+    String actual = null;
+    try {
+      actual = Translator.getSingleCharacterKeybordInstructions("A", "A");
+    } catch (Exception e) {
+    }
+    assertEquals("#",actual);
+    
+    try {
+      actual = Translator.getSingleCharacterKeybordInstructions("M", "A");
+    } catch (Exception e) {
+    }
+    assertEquals("D,D,#",actual);    
+    
+  }
 
 }
