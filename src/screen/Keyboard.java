@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @author Aaron Reinard
  *
- * Keyboard dictionary containing keyset and coordinates
+ *         Keyboard dictionary containing keyset and coordinates
  * 
  */
 

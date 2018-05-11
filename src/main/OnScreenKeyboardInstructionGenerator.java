@@ -7,9 +7,9 @@ import utils.Translator;
 
 /**
  * 
- * @author Aaron Reinard 
+ * @author Aaron Reinard
  *
- * Generate OnScreen keyboard instructions for media titles in provided in flat file
+ *         Generate OnScreen keyboard instructions for media titles in provided in flat file
  * 
  */
 
@@ -17,15 +17,15 @@ public class OnScreenKeyboardInstructionGenerator {
 
   public static void main(String[] args) throws Exception {
 
-    String file=null;
+    String file = null;
     Scanner input = new Scanner(System.in);
-    
+
     try {
       System.out.print("Please enter file: ");
       file = input.next();
       input.close();
-      
-      List<String> titleList = FileParser.parseFlatFile(file);      
+
+      List<String> titleList = FileParser.parseFlatFile(file);
       List<String> keyboardInstructionList = Translator.getKeyboardInstructionStringList(titleList);
       keyboardInstructionList.forEach(x -> System.out.println(x));
 
@@ -34,7 +34,7 @@ public class OnScreenKeyboardInstructionGenerator {
           "Unable to translate keyboard instructions for " + file + ". " + e.getMessage());
     }
   }
-  
+
 
 
 }
