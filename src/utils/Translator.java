@@ -69,7 +69,7 @@ public class Translator {
    * @return keyboard instructions to navigate between characters
    * @throws Exception
    */
-  private static String getSingleCharacterKeybordInstructions(String startValue, String endValue)
+  public static String getSingleCharacterKeybordInstructions(String startValue, String endValue)
       throws Exception {
 
     String result = null;
