@@ -9,8 +9,8 @@ import screen.Keyboard;
  * 
  * @author Aaron Reinard
  *
- *         Translate class accepts flat file, and provides methods to generate keyboard instructions
- */
+ * Used to convert strings and lists of string into on screen keyboard instructions.  
+ * */
 
 public class Translator {
 
