@@ -1,4 +1,4 @@
-package main;
+package osk;
 
 import java.util.List;
 import java.util.Scanner;

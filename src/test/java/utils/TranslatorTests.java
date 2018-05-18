@@ -1,4 +1,4 @@
-package test;
+package utils;
 
 import static org.junit.Assert.assertEquals;
 import java.io.FileNotFoundException;
