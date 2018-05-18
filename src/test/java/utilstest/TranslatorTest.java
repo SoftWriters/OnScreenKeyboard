@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import utils.Translator;
 
-public class TranslatorTests {
+public class TranslatorTest {
 
   OutputStream stream;
 
