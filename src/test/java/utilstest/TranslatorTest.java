@@ -67,7 +67,7 @@ public class TranslatorTest {
       actual = Translator.getSingleCharacterKeybordInstructions("M", "A");
     } catch (Exception e) {
     }
-    assertEquals("D,D,#",actual);    
+    assertEquals("U,U,#",actual);    
     
   }
 
