@@ -1,0 +1,88 @@
+	USE AdventureWorks2014;
+	GO
+
+	--/* Drop table Type and stored procedure if exists*/
+
+	IF EXISTS
+	(
+		SELECT *
+		FROM sys.procedures AS tt
+		WHERE name = 'usp_InsertProductCostHist '
+	)
+		DROP PROCEDURE usp_InsertProductCostHist;
+	GO
+	IF EXISTS
+	(
+		SELECT *
+		FROM sys.table_types AS tt
+		WHERE name = 'ProductCostHist'
+	)
+		DROP TYPE ProductCostHist;
+
+	/* Create a table type. */
+
+	GO
+	IF NOT EXISTS
+	(
+		SELECT *
+		FROM sys.table_types AS tt
+		WHERE name = 'ProductCostHist'
+	)
+		CREATE TYPE ProductCostHist AS TABLE
+		(
+			Product_Id INT,
+			Cost INT,
+			Start_Dt DATETIME2(0)
+		);
+	GO
+
+	/* Create a procedure to receive data for the table-valued parameter. */
+	CREATE PROCEDURE dbo.usp_InsertProductCostHist @PCH ProductCostHist READONLY
+	AS
+	SET NOCOUNT ON;
+	INSERT INTO Production.ProductCostHistory
+	(
+		ProductID,
+		StandardCost,
+		StartDate,
+		ModifiedDate
+	)
+	SELECT Product_Id,
+		   0 AS StandardCost,
+		   GETDATE() AS Start_Dt,
+		   GETDATE() AS ModifiedDate
+	FROM @PCH AS p
+	WHERE NOT EXISTS
+	(
+		SELECT 1
+		FROM Production.ProductCostHistory AS old
+		WHERE old.ProductID = p.Product_Id
+	);
+	GO
+
+	/* Declare a variable that references the type. */
+	DECLARE @ProductPCH AS ProductCostHist;
+
+	/* Add data to the table variable. */
+	INSERT INTO @ProductPCH
+	(
+		Product_Id,
+		Cost,
+		Start_Dt
+	)
+	SELECT ProductID,
+		   0.00,
+		   new.SellStartDate
+	FROM Production.Product AS new;
+
+
+	/* Pass the table variable data to a stored procedure. */
+	EXEC usp_InsertProductCostHist @ProductPCH;
+	GO
+
+	/* Check to see if any records inserted */
+
+	SELECT *
+	FROM Production.ProductCostHistory
+	WHERE CONVERT(DATE, ModifiedDate) = CONVERT(DATE, GETDATE())
+		 -- AND ProductID = 999;
