@@ -1,0 +1,97 @@
+USE AdventureWorks2014;/* Please Enter your DB name here */
+GO
+/**************************************************************************************************************
+Author : Kamal Subedi
+Date : August-4 2018
+Purpose : Script out the path of the cursor on the keyboard based on the String and a keybord layout provided.
+***************************************************************************************************************/
+DROP TABLE IF EXISTS Keyboard_Layout;
+CREATE TABLE Keyboard_Layout (Layout_Path VARCHAR(50));
+INSERT INTO Keyboard_Layout(Layout_Path)
+VALUES('ABCDEF'),
+    ('GHIJKL'),
+    ('MNOPQR'),
+    ('STUVWX'),
+    ('YZ1234'),
+    ('567890');
+
+--SELECT * FROM #Temp AS t
+/*
+ABCDEF
+GHIJKL
+MNOPQR
+STUVWX
+YZ1234
+567890
+*/
+DECLARE @mystring AS VARCHAR(50) ='IT CROWD';/* This it the sample input povided. You can use any word/sentence. */
+--SELECT @mystring
+DECLARE @mycounter INT=1;
+DECLARE @myresultstring VARCHAR(100) ='';
+DECLARE @mycharacter CHAR(1);
+DECLARE @currentCursorposition_x INT=1;
+DECLARE @currentCursorposition_y INT=1;
+
+--loop through every character
+WHILE @mycounter<=LEN(@mystring)BEGIN
+    SET @mycharacter=SUBSTRING(@mystring, @mycounter, 1);
+    --PRINT 'looking FOR ' + @mycharacter
+    IF @mycharacter=' ' SET @myresultstring=@myresultstring+'S,';
+    DECLARE @mycursor AS CURSOR;
+    DECLARE @KeyboardKeys AS CHAR(6);
+    DECLARE @CharacterFoundOnRowNo INT=1;
+    DECLARE @CharacterFoundOnPositionNo INT=1; --RR#L#SR#RRR#LLL#RR#L#
+    SET @mycursor=CURSOR FOR
+    SELECT Layout_Path FROM Keyboard_Layout;
+    OPEN @mycursor;
+    FETCH NEXT FROM @mycursor
+    INTO @KeyboardKeys;
+    WHILE @@FETCH_STATUS=0 BEGIN
+        IF CHARINDEX(@mycharacter, @KeyboardKeys, 1)>0 --if in the same row
+        BEGIN
+
+            --adjust the row movement up or down
+            WHILE @CharacterFoundOnRowNo>@currentCursorposition_x BEGIN
+                SET @myresultstring=@myresultstring+'D,';
+                SET @currentCursorposition_x=@currentCursorposition_x+1;
+            END;
+            WHILE @CharacterFoundOnRowNo<@currentCursorposition_x BEGIN
+                SET @myresultstring=@myresultstring+'U,';
+                SET @currentCursorposition_x=@currentCursorposition_x-1;
+            END;
+
+            --
+            --PRINT 'found on row number ' +  CAST(@characterfoundOnrowNo AS CHAR(1))
+            --PRINT @vcrbuttons
+            SET @CharacterFoundOnPositionNo=CHARINDEX(@mycharacter, @KeyboardKeys, 1);
+
+            --PRINT       'found on charracter number ' + CAST(@characterfoundOnPositionNo AS CHAR(1))
+            WHILE @CharacterFoundOnPositionNo>@currentCursorposition_y BEGIN
+                SET @myresultstring=@myresultstring+'R,';
+                SET @currentCursorposition_y=@currentCursorposition_y+1;
+            END;
+            WHILE @CharacterFoundOnPositionNo<@currentCursorposition_y BEGIN
+                SET @myresultstring=@myresultstring+'L,';
+                SET @currentCursorposition_y=@currentCursorposition_y-1;
+            END;
+            IF @CharacterFoundOnPositionNo=@currentCursorposition_y
+                SET @myresultstring=@myresultstring+'#,';
+
+        --PRINT @myresultstring 
+        END;
+
+        --do some printing
+        SET @CharacterFoundOnRowNo=@CharacterFoundOnRowNo+1;
+        FETCH NEXT FROM @mycursor
+        INTO @KeyboardKeys;
+    END;
+    CLOSE @mycursor;
+    DEALLOCATE @mycursor;
+
+    --Sample Output
+    --D,R,R,#,D,D,L,#,S,U,U,U,R,#,D,D,R,R,R,#,L,L,L,#,D,R,R,#,U,U,U,L,#
+    SET @mycounter=@mycounter+1;
+END;
+PRINT SUBSTRING(@myresultstring, 1, LEN(@myresultstring)-1);
+GO
+
