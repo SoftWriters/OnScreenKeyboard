@@ -1,0 +1,13 @@
+﻿
+ THIS LINE STARTS WITH A SPACE
+THIS LINE ENDS WITH A SPACE 
+ THIS LINE BEGINS AND ENDS WITH A SPACE 
+this line is all lower case
+ This Line is A MiX of LOWER and uppeR casES and a LEAdINg space
+!@#$%^&*()
+This Line has @#$ data
+   Three leading     and 5 imbedded spaces
+Here's a tab	character
+1234567890
+A mix of letters and 15 dig1ts
+A b4 8E5 & ,, w
