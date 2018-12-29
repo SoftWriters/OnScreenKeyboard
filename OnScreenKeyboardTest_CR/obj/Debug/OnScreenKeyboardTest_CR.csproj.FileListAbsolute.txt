@@ -1,0 +1,11 @@
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnScreenKeyboardTest_CR\bin\Debug\OnScreenKeyboardTest_CR.exe.config
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnScreenKeyboardTest_CR\bin\Debug\OnScreenKeyboardTest_CR.exe
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnScreenKeyboardTest_CR\bin\Debug\OnScreenKeyboardTest_CR.pdb
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnScreenKeyboardTest_CR\bin\Debug\OnscreenKeyboardTranslation.dll
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnScreenKeyboardTest_CR\bin\Debug\OnscreenKeyboardTranslation.pdb
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnScreenKeyboardTest_CR\obj\Debug\OnScreenKeyboardTest_CR.csprojResolveAssemblyReference.cache
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnScreenKeyboardTest_CR\obj\Debug\OnScreenKeyboardTest_CR.Form1.resources
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnScreenKeyboardTest_CR\obj\Debug\OnScreenKeyboardTest_CR.Properties.Resources.resources
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnScreenKeyboardTest_CR\obj\Debug\OnScreenKeyboardTest_CR.csproj.GenerateResource.Cache
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnScreenKeyboardTest_CR\obj\Debug\OnScreenKeyboardTest_CR.exe
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnScreenKeyboardTest_CR\obj\Debug\OnScreenKeyboardTest_CR.pdb

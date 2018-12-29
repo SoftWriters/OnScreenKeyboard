@@ -1,0 +1,4 @@
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnscreenKeyboardTranslation\bin\Debug\OnscreenKeyboardTranslation.dll
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnscreenKeyboardTranslation\bin\Debug\OnscreenKeyboardTranslation.pdb
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnscreenKeyboardTranslation\obj\Debug\OnscreenKeyboardTranslation.dll
+C:\Users\Chris\documents\visual studio 2015\Projects\OnScreenKeyboardTest_CR\OnscreenKeyboardTranslation\obj\Debug\OnscreenKeyboardTranslation.pdb
