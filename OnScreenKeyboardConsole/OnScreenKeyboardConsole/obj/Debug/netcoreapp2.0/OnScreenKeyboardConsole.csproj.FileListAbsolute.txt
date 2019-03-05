@@ -1,0 +1,11 @@
+C:\Users\gkerb\Source\Repos\OnScreenKeyboard\OnScreenKeyboardConsole\OnScreenKeyboardConsole\bin\Debug\netcoreapp2.0\OnScreenKeyboardConsole.deps.json
+C:\Users\gkerb\Source\Repos\OnScreenKeyboard\OnScreenKeyboardConsole\OnScreenKeyboardConsole\bin\Debug\netcoreapp2.0\OnScreenKeyboardConsole.runtimeconfig.json
+C:\Users\gkerb\Source\Repos\OnScreenKeyboard\OnScreenKeyboardConsole\OnScreenKeyboardConsole\bin\Debug\netcoreapp2.0\OnScreenKeyboardConsole.runtimeconfig.dev.json
+C:\Users\gkerb\Source\Repos\OnScreenKeyboard\OnScreenKeyboardConsole\OnScreenKeyboardConsole\bin\Debug\netcoreapp2.0\OnScreenKeyboardConsole.dll
+C:\Users\gkerb\Source\Repos\OnScreenKeyboard\OnScreenKeyboardConsole\OnScreenKeyboardConsole\bin\Debug\netcoreapp2.0\OnScreenKeyboardConsole.pdb
+C:\Users\gkerb\Source\Repos\OnScreenKeyboard\OnScreenKeyboardConsole\OnScreenKeyboardConsole\obj\Debug\netcoreapp2.0\OnScreenKeyboardConsole.csprojResolveAssemblyReference.cache
+C:\Users\gkerb\Source\Repos\OnScreenKeyboard\OnScreenKeyboardConsole\OnScreenKeyboardConsole\obj\Debug\netcoreapp2.0\OnScreenKeyboardConsole.csproj.CoreCompileInputs.cache
+C:\Users\gkerb\Source\Repos\OnScreenKeyboard\OnScreenKeyboardConsole\OnScreenKeyboardConsole\obj\Debug\netcoreapp2.0\OnScreenKeyboardConsole.AssemblyInfoInputs.cache
+C:\Users\gkerb\Source\Repos\OnScreenKeyboard\OnScreenKeyboardConsole\OnScreenKeyboardConsole\obj\Debug\netcoreapp2.0\OnScreenKeyboardConsole.AssemblyInfo.cs
+C:\Users\gkerb\Source\Repos\OnScreenKeyboard\OnScreenKeyboardConsole\OnScreenKeyboardConsole\obj\Debug\netcoreapp2.0\OnScreenKeyboardConsole.dll
+C:\Users\gkerb\Source\Repos\OnScreenKeyboard\OnScreenKeyboardConsole\OnScreenKeyboardConsole\obj\Debug\netcoreapp2.0\OnScreenKeyboardConsole.pdb
