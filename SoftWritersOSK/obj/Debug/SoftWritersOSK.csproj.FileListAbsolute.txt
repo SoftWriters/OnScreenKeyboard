@@ -1,0 +1,7 @@
+C:\Users\Sean\Source\repos\SoftWritersOSK\SoftWritersOSK\obj\Debug\SoftWritersOSK.csprojResolveAssemblyReference.cache
+C:\Users\Sean\Source\repos\SoftWritersOSK\SoftWritersOSK\obj\Debug\SoftWritersOSK.csproj.CoreCompileInputs.cache
+C:\Users\Sean\Source\repos\SoftWritersOSK\SoftWritersOSK\bin\Debug\SoftWritersOSK.exe.config
+C:\Users\Sean\Source\repos\SoftWritersOSK\SoftWritersOSK\bin\Debug\SoftWritersOSK.exe
+C:\Users\Sean\Source\repos\SoftWritersOSK\SoftWritersOSK\bin\Debug\SoftWritersOSK.pdb
+C:\Users\Sean\Source\repos\SoftWritersOSK\SoftWritersOSK\obj\Debug\SoftWritersOSK.exe
+C:\Users\Sean\Source\repos\SoftWritersOSK\SoftWritersOSK\obj\Debug\SoftWritersOSK.pdb
