@@ -1,0 +1,21 @@
+1. Create two folder structures. They are used in SSIS package
+	C:\temp\SW\Input
+	C:\temp\SW\Output
+I used Input_Selections.txt as my input file
+I used Output_Strings.txt as my output file
+
+2. Create a database named SoftWriters
+
+3. Run the following sQL files in order:
+	a. CREATE_KeyboardGuide
+	b. CREATE_Keyboard_ASCII_Guide
+	c. CREATE_SearchTerm
+	d. CREATE_SearchTerm_Conversion
+	e. INSERT_KeyboardGuide
+	f. INSERT_Keyboard_ASCII_Guide
+	g. CREATE_sp_LoadSearchTerm_Conv
+	h. CREATE_sp_ConvertSearch_CalcPath
+
+4. Execute SSIS pack after setup
+
+5. I've attached my Input and Output files as examples of my work.
