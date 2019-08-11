@@ -1,5 +1,11 @@
 On Screen Keyboard
 ==================
+To Run
+-----------
+Open the solution in Visual Studio and build.
+Run the console app. It will use the input.txt file located in console application directory as input.
+The DVR's show will be displayed on one line of the cmd window, followed by the output on the next line.
+
 
 The Problem
 -----------
