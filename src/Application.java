@@ -17,7 +17,7 @@ public class Application {
 
         VoiceParser parser = new VoiceParser();
         for(String line : inputFileLines) {
-            String output = parser.parseDirections(line);
+            String output = parser.parseDirectionsForPhrase(line);
             System.out.println(line + ": " + output);
         }
     }
