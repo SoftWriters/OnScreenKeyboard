@@ -2,6 +2,9 @@ package parser;
 
 import parser.components.Keyboard;
 
+/**
+ * A module that can be used to translate phrases into DVR commands
+ */
 public class VoiceParser {
 
     private Keyboard keyboard;
