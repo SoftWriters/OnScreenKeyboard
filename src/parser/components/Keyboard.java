@@ -10,8 +10,7 @@ public class Keyboard {
     }
 
     private void initializeKeyboard() {
-        this.cursorRow = 0;
-        this.cursorCol = 0;
+        this.resetCursor();
         this.keyboard = new char[][] {
                 {'A', 'B', 'C', 'D', 'E', 'F'},
                 {'G', 'H', 'I', 'J', 'K', 'L'},
@@ -26,6 +25,11 @@ public class Keyboard {
         return (65 <= command && command <= 101);
     }
 
+    /**
+     * Gets directions for a single character
+     * @param command
+     * @return
+     */
     public String processCharacter(char command) {
         if(command == ' ')
             return "S";
@@ -61,7 +65,7 @@ public class Keyboard {
     }
 
     /**
-     * Determine whether to convert a letter to upper case or digit to map it after Z
+     * Determine whether to convert a letter to upper case or map a digit to our custom ascii
      * @param c
      * @return
      */
@@ -77,7 +81,7 @@ public class Keyboard {
     private char mapDigitToKeyboard(char c) {
         // 0 Needs to come after 9
         if (c == '0')
-            c += 9;
+            c += 10;
         return (char) (c + 42);
     }
 
@@ -101,5 +105,13 @@ public class Keyboard {
         if(Character.isDigit(c))
             return mapDigitToKeyboard(c);
         return c;
+    }
+
+    /**
+     * Sets cursor to 0,0
+     */
+    public void resetCursor() {
+        this.cursorRow = 0;
+        this.cursorCol = 0;
     }
 }

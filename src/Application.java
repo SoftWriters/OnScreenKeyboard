@@ -9,7 +9,7 @@ public class Application {
 
         List<String> inputFileLines;
         try {
-            inputFileLines = InputReader.getLinesFromFile("input.txt");
+            inputFileLines = InputReader.getLinesFromFile(args[0]);
         } catch (FileNotFoundException e) {
             System.out.println("Could not find that file!");
             return;
