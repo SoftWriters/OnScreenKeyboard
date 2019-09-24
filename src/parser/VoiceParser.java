@@ -11,7 +11,10 @@ public class VoiceParser {
     }
 
     public String parseDirectionsForPhrase(String line) {
-        return "";
+        String outputCommand = "";
+        for(char c : line.toCharArray())
+            outputCommand += getDirectionsForCharacter(c) + ",";
+        return outputCommand;
     }
 
 

@@ -22,11 +22,19 @@ public class Keyboard {
         };
     }
 
+    private boolean isValidCharacter(char command) {
+        return (65 <= command && command <= 101);
+    }
+
     public String processCharacter(char command) {
         if(command == ' ')
-            return "S,";
+            return "S";
 
         command = mapCommandToKeyboard(command);
+        if(!isValidCharacter(command)) {
+            System.out.println("INVALID COMMAND ENTERED!");
+            System.exit(0);
+        }
 
         // Determine left/right
         int cursorXPosition = (getCurrentCharacter() - 65) % 6;
@@ -53,7 +61,7 @@ public class Keyboard {
     }
 
     /**
-     * Convert a letter to upper case or digit to map after Z
+     * Determine whether to convert a letter to upper case or digit to map it after Z
      * @param c
      * @return
      */
@@ -61,15 +69,33 @@ public class Keyboard {
         return (Character.isDigit(c) ? mapDigitToKeyboard(c) : Character.toUpperCase(c));
     }
 
+    /**
+     * Fits 0-9 into our array after Z by using our own ASCII
+     * @param c
+     * @return
+     */
     private char mapDigitToKeyboard(char c) {
+        // 0 Needs to come after 9
+        if (c == '0')
+            c += 9;
         return (char) (c + 42);
     }
 
+    /**
+     * Moves cursor for keyboard
+     * @param rowOffset
+     * @param colOffset
+     */
     private void moveCursor(int rowOffset, int colOffset) {
         this.cursorRow += rowOffset;
         this.cursorCol += colOffset;
     }
 
+    /**
+     * Gets current character at the cursor.
+     * If it's a digit, map it to our custom ascii
+     * @return
+     */
     private char getCurrentCharacter() {
         char c = this.keyboard[cursorRow][cursorCol];
         if(Character.isDigit(c))
