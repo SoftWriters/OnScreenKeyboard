@@ -3,6 +3,10 @@ package parser.components;
 /**
  * Manages keyboard related information. Gives directions on how to
  * move between characters via DVR commands.
+ *
+ * The keyboard is a 2D Array of characters with a cursor pointed
+ * at the current character.
+ *
  */
 public class Keyboard {
 
@@ -11,10 +15,14 @@ public class Keyboard {
 
     public Keyboard() {
         initializeKeyboard();
+        resetCursor();
     }
 
+    /**
+     * Initializes keyboard's values
+     *
+     */
     private void initializeKeyboard() {
-        this.resetCursor();
         this.keyboard = new char[][] {
                 {'A', 'B', 'C', 'D', 'E', 'F'},
                 {'G', 'H', 'I', 'J', 'K', 'L'},
@@ -26,7 +34,66 @@ public class Keyboard {
     }
 
     /**
-     * Verify the command is A-Z or 0-9 in our custom ascii
+     * Moves cursor for keyboard
+     * @param rowOffset
+     * @param colOffset
+     */
+    private void moveCursor(int rowOffset, int colOffset) {
+        this.cursorRow += rowOffset;
+        this.cursorCol += colOffset;
+    }
+
+    /**
+     * Used to place 0-9 into our keyboard after Z
+     *
+     * To search for a digit, we modify the digit's ASCII value to appear
+     * after the Z in our keyboard.
+     *
+     * @param c
+     * @return
+     */
+    private char mapDigitToKeyboard(char c) {
+        if (c == '0')
+            // '0' Needs to be placed after '9'
+            c += 10;
+
+        return (char) (c + 42);
+    }
+
+    /**
+     * Convert the character to an ASCII format searchable by our keyboard
+     * @param c
+     * @return
+     */
+    private char mapCommandToKeyboard(char c) {
+        return (Character.isDigit(c) ? mapDigitToKeyboard(c) : Character.toUpperCase(c));
+    }
+
+    /**
+     * Gets current character at the cursor.
+     *
+     * If it's a digit, map it to our ascii format above to allow
+     * for searching.
+     *
+     * @return
+     */
+    private char getCurrentCharacter() {
+        char c = this.keyboard[cursorRow][cursorCol];
+        if(Character.isDigit(c))
+            return mapDigitToKeyboard(c);
+        return c;
+    }
+
+    /**
+     * Sets cursor to row = 0 col = 0
+     */
+    public void resetCursor() {
+        this.cursorRow = 0;
+        this.cursorCol = 0;
+    }
+
+    /**
+     * Verify the command is A-Z or 0-9 and in our keyboard
      * @param command
      * @return
      */
@@ -36,6 +103,11 @@ public class Keyboard {
 
     /**
      * Gets directions for a single character
+     *
+     * To search for a letter, we compare the ASCII value of the letter
+     * with the ASCII values in our keyboard to mathematically determine
+     * the path.
+     *
      * @param command
      * @return
      */
@@ -45,7 +117,7 @@ public class Keyboard {
 
         command = mapCommandToKeyboard(command);
         if(!isValidCharacter(command)) {
-            System.out.println("INVALID COMMAND ENTERED!");
+            System.out.println("Invalid command received. Exiting...");
             System.exit(0);
         }
 
@@ -62,7 +134,7 @@ public class Keyboard {
         String rowCharacter = (rowDistance > 0) ? "D" : "U";
         moveCursor(rowDistance, 0);
 
-        // Parse string
+        // Output directions string
         String outputCommand = "";
         for (int i = 0; i < Math.abs(rowDistance); i++)
             outputCommand += rowCharacter + ",";
@@ -73,54 +145,5 @@ public class Keyboard {
         return outputCommand;
     }
 
-    /**
-     * Determine whether to convert a letter to upper case or map a digit to our custom ascii
-     * @param c
-     * @return
-     */
-    private char mapCommandToKeyboard(char c) {
-        return (Character.isDigit(c) ? mapDigitToKeyboard(c) : Character.toUpperCase(c));
-    }
 
-    /**
-     * Fits 0-9 into our array after Z by using our own ASCII
-     * @param c
-     * @return
-     */
-    private char mapDigitToKeyboard(char c) {
-        // 0 Needs to be placed after 9
-        if (c == '0')
-            c += 10;
-        return (char) (c + 42);
-    }
-
-    /**
-     * Moves cursor for keyboard
-     * @param rowOffset
-     * @param colOffset
-     */
-    private void moveCursor(int rowOffset, int colOffset) {
-        this.cursorRow += rowOffset;
-        this.cursorCol += colOffset;
-    }
-
-    /**
-     * Gets current character at the cursor.
-     * If it's a digit, map it to our custom ascii
-     * @return
-     */
-    private char getCurrentCharacter() {
-        char c = this.keyboard[cursorRow][cursorCol];
-        if(Character.isDigit(c))
-            return mapDigitToKeyboard(c);
-        return c;
-    }
-
-    /**
-     * Sets cursor to 0,0
-     */
-    public void resetCursor() {
-        this.cursorRow = 0;
-        this.cursorCol = 0;
-    }
 }

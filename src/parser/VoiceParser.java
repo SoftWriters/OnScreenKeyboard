@@ -7,6 +7,9 @@ import parser.components.Keyboard;
  */
 public class VoiceParser {
 
+    /**
+     * Keyboard to allow for translating text
+     */
     private Keyboard keyboard;
 
     public VoiceParser() {
@@ -14,25 +17,31 @@ public class VoiceParser {
     }
 
     /**
-     * Parses directions for an entire line
-     * @param line
+     * Parse directions for a single character
+     * @param c
      * @return
      */
-    public String parseDirectionsForPhrase(String line) {
+    private String getDirectionsForCharacter(char c) {
+        return keyboard.processCharacter(c);
+    }
+
+    /**
+     * Parses directions for an entire line
+     * @param phrase
+     * @return
+     */
+    public String parseDirectionsForPhrase(String phrase) {
         String outputCommand = "";
 
-        // Get directions for each character
-        for(char c : line.toCharArray())
+        // Get directions for each character in the phrase
+        for(char c : phrase.toCharArray())
             outputCommand += getDirectionsForCharacter(c) + ",";
 
         outputCommand = outputCommand.substring(0, outputCommand.length() - 1);
 
-        // Reset cursor for future lines
+        // Reset cursor for future phrases
         keyboard.resetCursor();
         return outputCommand;
     }
 
-    private String getDirectionsForCharacter(char c) {
-        return keyboard.processCharacter(c);
-    }
 }
