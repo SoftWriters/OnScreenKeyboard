@@ -9,6 +9,11 @@ import java.util.List;
  */
 public class Application {
 
+    /**
+     * Run example application for translation
+     * Supply one argument with the file name to translate
+     * @param args
+     */
     public static void main(String[] args) {
 
         // Get lines to translate
