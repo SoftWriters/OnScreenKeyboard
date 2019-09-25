@@ -1,5 +1,9 @@
 package parser.components;
 
+/**
+ * Manages keyboard related information. Gives directions on how to
+ * move between characters via DVR commands.
+ */
 public class Keyboard {
 
     private int cursorRow, cursorCol;
@@ -21,6 +25,11 @@ public class Keyboard {
         };
     }
 
+    /**
+     * Verify the command is A-Z or 0-9 in our custom ascii
+     * @param command
+     * @return
+     */
     private boolean isValidCharacter(char command) {
         return (65 <= command && command <= 101);
     }
@@ -79,7 +88,7 @@ public class Keyboard {
      * @return
      */
     private char mapDigitToKeyboard(char c) {
-        // 0 Needs to come after 9
+        // 0 Needs to be placed after 9
         if (c == '0')
             c += 10;
         return (char) (c + 42);

@@ -4,7 +4,8 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 /**
- * Combines input and parser module into one application
+ * Shows how to combine input and parser module into one application.
+ * Easily replacable with other parts of system.
  */
 public class Application {
 
@@ -21,7 +22,7 @@ public class Application {
 
         VoiceParser parser = new VoiceParser();
 
-        // Translate every line
+        // Parse/Translate every line
         for(String line : inputFileLines) {
             String output = parser.parseDirectionsForPhrase(line);
             System.out.println(line + ": " + output);
