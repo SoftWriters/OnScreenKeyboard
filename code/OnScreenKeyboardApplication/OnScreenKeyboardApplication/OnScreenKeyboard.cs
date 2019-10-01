@@ -8,8 +8,9 @@ namespace OnScreenKeyboardApplication
     {
         private static OpenFileDialog openFileDialog;
         private static StreamReader inputReader;
-        private static string currentLine;
+        private static string inputLines;
         private static KeyboardConverter converter;
+        private static string convertedLines;
 
         [STAThread]
         static void Main()
@@ -22,15 +23,13 @@ namespace OnScreenKeyboardApplication
 
             SetupFileReader();
 
-            ReadInputLine();
+            ReadInputLines();
 
             CreateKeyboardConverterObject();
 
-            while (currentLine != null)
-            {
-                WriteConvertedLine();
-                ReadInputLine();
-            }
+            ConvertInputTextToKeyboard();
+
+            WriteConvertedLines();
 
             CloseReaderStream();
         }
@@ -68,9 +67,9 @@ namespace OnScreenKeyboardApplication
             inputReader = new StreamReader(inputFileStream);
         }
 
-        private static void ReadInputLine()
+        private static void ReadInputLines()
         {
-            currentLine = inputReader.ReadLine();
+            inputLines = inputReader.ReadToEnd();
         }
 
         private static void CreateKeyboardConverterObject()
@@ -78,10 +77,14 @@ namespace OnScreenKeyboardApplication
             converter = new KeyboardConverter();
         }
 
-        private static void WriteConvertedLine()
+        private static void ConvertInputTextToKeyboard()
         {
-            string convertedLine = converter.ConvertLine(currentLine);
-            Console.WriteLine(convertedLine);
+            convertedLines = converter.ConvertLines(inputLines);
+        }
+
+        private static void WriteConvertedLines()
+        {
+            Console.WriteLine(convertedLines);
         }
 
         private static void CloseReaderStream()

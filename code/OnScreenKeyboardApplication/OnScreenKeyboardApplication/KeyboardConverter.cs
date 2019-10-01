@@ -1,10 +1,18 @@
-﻿namespace OnScreenKeyboardApplication
+﻿using System;
+
+namespace OnScreenKeyboardApplication
 {
     class KeyboardConverter
     {
-        public string ConvertLine(string currentLine)
+        public string ConvertLines(string inputLines)
         {
-            return currentLine;
+            string[] splitInputLines = inputLines.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+
+            foreach (string inputLine in splitInputLines)
+            {
+
+            }
+            return splitInputLines[0];
         }
     }
 }
