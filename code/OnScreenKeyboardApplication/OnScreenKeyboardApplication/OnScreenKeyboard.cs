@@ -8,7 +8,6 @@ namespace OnScreenKeyboardApplication
     {
         private static OpenFileDialog openFileDialog;
         private static StreamReader inputReader;
-        private static StreamWriter convertedInputWriter;
         private static string currentLine;
         private static KeyboardConverter converter;
 
@@ -27,13 +26,13 @@ namespace OnScreenKeyboardApplication
 
             CreateKeyboardConverterObject();
 
-            CreateOutputWriter();
-
             while (currentLine != null)
             {
                 WriteConvertedLine();
                 ReadInputLine();
             }
+
+            CloseReaderStream();
         }
 
         private static void CreateOpenFileDialogObject()
@@ -79,15 +78,15 @@ namespace OnScreenKeyboardApplication
             converter = new KeyboardConverter();
         }
 
-        private static void CreateOutputWriter()
-        {
-            convertedInputWriter = new StreamWriter("ConvertedText.txt");
-        }
-
         private static void WriteConvertedLine()
         {
             string convertedLine = converter.ConvertLine(currentLine);
-            convertedInputWriter.WriteLine(convertedLine);
+            Console.WriteLine(convertedLine);
+        }
+
+        private static void CloseReaderStream()
+        {
+            inputReader.Close();
         }
     }
 }
