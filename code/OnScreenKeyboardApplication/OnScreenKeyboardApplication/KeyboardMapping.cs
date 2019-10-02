@@ -17,20 +17,25 @@ namespace OnScreenKeyboardApplication
             currentYPosition = 0;
         }
 
-        public bool SpaceCharacter(char inputCharacter)
+        public bool IsSpaceCharacter(char inputCharacter)
         {
-            // Implement
-            return false;
+            return Char.IsWhiteSpace(inputCharacter);
         }
 
         public int FindVerticalMovement(char inputCharacter)
         {
-            return 0;
+            int newYPosition = 0;
+
+
+            return newYPosition - currentYPosition;
         }
 
         public int FindHorizontalMovement(char inputCharacter)
         {
-            return 0;
+            int newXPosition = 0;
+
+
+            return newXPosition - currentXPosition;
         }
     }
 }

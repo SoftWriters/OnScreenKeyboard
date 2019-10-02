@@ -5,7 +5,7 @@ namespace OnScreenKeyboardApplication
     class KeyboardConverter
     {
         private string keyboardMovementsLine;
-        private KeyboardMapping currentMapping;
+        private KeyboardMapping keyboardMap;
 
         public string ConvertLines(string inputLines)
         {
@@ -15,20 +15,20 @@ namespace OnScreenKeyboardApplication
 
             foreach (string inputLine in splitInputLines)
             {
-                convertedLines += ChangeToKeyboardMovements(inputLine) + "\n";
+                convertedLines += ConvertToKeyboardMovements(inputLine) + "\n";
             }
             return convertedLines;
         }
 
-        private string ChangeToKeyboardMovements(string inputLine)
+        private string ConvertToKeyboardMovements(string inputLine)
         {
             keyboardMovementsLine = "";
 
-            currentMapping = new KeyboardMapping();
+            keyboardMap = new KeyboardMapping();
 
             foreach (char inputCharacter in inputLine)
             {
-                if (currentMapping.SpaceCharacter(inputCharacter))
+                if (keyboardMap.IsSpaceCharacter(inputCharacter))
                 {
                     keyboardMovementsLine += "S" + ",";
                 }
@@ -36,24 +36,23 @@ namespace OnScreenKeyboardApplication
                 {
                     AddKeyboardPositionMovements(inputCharacter);
                 }
-
                 AddSelectCharacter();
             }
 
-            RemoveFinalComma();
+            keyboardMovementsLine = RemoveFinalCommaFromMovement();
 
             return keyboardMovementsLine;
         }
 
-        private void RemoveFinalComma()
+        private string RemoveFinalCommaFromMovement()
         {
-            keyboardMovementsLine.Remove(keyboardMovementsLine.Length - 1);
+            return keyboardMovementsLine.Remove(keyboardMovementsLine.Length - 1);
         }
 
         private void AddKeyboardPositionMovements(char inputCharacter)
         {
-            int verticalMoves = currentMapping.FindVerticalMovement(inputCharacter);
-            int horizontalMoves = currentMapping.FindHorizontalMovement(inputCharacter);
+            int verticalMoves = keyboardMap.FindVerticalMovement(inputCharacter);
+            int horizontalMoves = keyboardMap.FindHorizontalMovement(inputCharacter);
 
             AddVerticalMovement(verticalMoves);
             AddHorizontalMovement(horizontalMoves);
@@ -91,7 +90,7 @@ namespace OnScreenKeyboardApplication
 
         private void AddSelectCharacter()
         {
-            keyboardMovementsLine += "#" + ",";
+            keyboardMovementsLine += "#," + ",";
         }
     }
 }
