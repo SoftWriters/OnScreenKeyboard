@@ -59,7 +59,11 @@ namespace OnScreenKeyboardApplication
             }
             else if(IsNumber(characterValue))
             {
-                convertedYPosition = ConvertNumberValue(characterValue) / 6;
+                convertedYPosition = (characterValue - 23) / 6;
+            }
+            else if (IsZero(characterValue))
+            {
+                convertedYPosition = 5;
             }
 
             return convertedYPosition;
@@ -75,7 +79,11 @@ namespace OnScreenKeyboardApplication
             }
             else if (IsNumber(characterValue))
             {
-                convertedXPosition = ConvertNumberValue(characterValue) % 6;
+                convertedXPosition = (characterValue - 23) % 6;
+            }
+            else if (IsZero(characterValue))
+            {
+                convertedXPosition = 5;
             }
 
             return convertedXPosition;
@@ -88,19 +96,12 @@ namespace OnScreenKeyboardApplication
 
         public bool IsNumber(int characterValue)
         {
-            return characterValue > 47 && characterValue < 58;
+            return characterValue > 48 && characterValue < 58;
         }
 
-        public int ConvertNumberValue(int characterValue)
+        public bool IsZero(int characterValue)
         {
-            if(characterValue == 48)
-            {
-                return 5;
-            }
-            else
-            {
-                return characterValue - 23;
-            }
+            return characterValue == 48;
         }
     }
 }
