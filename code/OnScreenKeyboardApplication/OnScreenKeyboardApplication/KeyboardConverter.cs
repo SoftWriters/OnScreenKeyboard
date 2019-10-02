@@ -90,7 +90,7 @@ namespace OnScreenKeyboardApplication
 
         private void AddSelectCharacter()
         {
-            keyboardMovementsLine += "#," + ",";
+            keyboardMovementsLine += "#" + ",";
         }
     }
 }
