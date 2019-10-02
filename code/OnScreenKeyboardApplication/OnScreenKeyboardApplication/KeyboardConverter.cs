@@ -34,7 +34,7 @@ namespace OnScreenKeyboardApplication
                 }
                 else
                 {
-                    AddKeyboardPositionMovements(inputCharacter);
+                    AddKeyboardPositionMovements(char.ToUpper(inputCharacter));
                 }
                 AddSelectCharacter();
             }

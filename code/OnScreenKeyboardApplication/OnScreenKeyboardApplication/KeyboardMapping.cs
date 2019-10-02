@@ -24,18 +24,99 @@ namespace OnScreenKeyboardApplication
 
         public int FindVerticalMovement(char inputCharacter)
         {
-            int newYPosition = 0;
+            int characterValue = ConvertCharacterToInt(inputCharacter);
 
+            int newYPosition = FindNewYPosition(characterValue);
 
-            return newYPosition - currentYPosition;
+            int verticalMovement = newYPosition - currentYPosition;
+
+            currentYPosition = newYPosition;
+
+            return verticalMovement;
         }
 
         public int FindHorizontalMovement(char inputCharacter)
         {
-            int newXPosition = 0;
+            int characterValue = ConvertCharacterToInt(inputCharacter);
 
+            int newXPosition = FindNewXPosition(characterValue);
 
-            return newXPosition - currentXPosition;
+            int horizontalMovement = newXPosition - currentXPosition;
+
+            currentXPosition = newXPosition;
+
+            return horizontalMovement;
+        }
+
+        public int ConvertCharacterToInt(char inputCharacter)
+        {
+            return Convert.ToInt32(inputCharacter);
+        }
+
+        public int FindNewYPosition(int characterValue)
+        {
+            int convertedYPosition = 0;
+
+            if (IsLetter(characterValue))
+            {
+                convertedYPosition = (characterValue - 65) / 6;
+            }
+            else if(IsNumber(characterValue))
+            {
+                convertedYPosition = ConvertNumberValueToY(characterValue);
+            }
+
+            return convertedYPosition;
+        }
+
+        public int FindNewXPosition(int characterValue)
+        {
+            int convertedXPosition = 0;
+
+            if (IsLetter(characterValue))
+            {
+                convertedXPosition = (characterValue - 65) % 6;
+            }
+            else if (IsNumber(characterValue))
+            {
+                convertedXPosition = ConvertNumberValueToX(characterValue);
+            }
+
+            return convertedXPosition;
+        }
+
+        public bool IsLetter(int characterValue)
+        {
+            return characterValue > 64 && characterValue < 91;
+        }
+
+        public bool IsNumber(int characterValue)
+        {
+            return characterValue > 47 && characterValue < 58;
+        }
+
+        public int ConvertNumberValueToY(int characterValue)
+        {
+            if(characterValue == 48)
+            {
+                return 5;
+            }
+            else
+            {
+                return (characterValue - 23) / 6;
+            }
+        }
+
+        public int ConvertNumberValueToX(int characterValue)
+        {
+            if (characterValue == 48)
+            {
+                return 5;
+            }
+            else
+            {
+                return (characterValue - 23) % 6;
+            }
         }
     }
 }
