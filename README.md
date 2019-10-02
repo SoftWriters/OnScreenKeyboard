@@ -1,6 +1,9 @@
 On Screen Keyboard
 ==================
 
+# Notes For The Reviewer
+
+
 The Problem
 -----------
 On screen keyboards are the bane of DVR users. To help alleviate the pain, one local company is asking you to implement part of a voice to text search for their DVR by developing an algorithm to script the on screen keyboard.
