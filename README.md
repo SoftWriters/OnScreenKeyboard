@@ -1,6 +1,17 @@
 On Screen Keyboard
 ==================
 
+# Notes For The Reviewer
+
+- This is my first time using C# in a project ever.
+- I chose to use C# since it fits into the .NET framework very well.
+- To run my program:
+	- Open solution file in Visual Studio Code.
+	- Start the OnScreenKeyboard file.
+- My program assumes a user wants to select a text file to read with a GUI display and has a text file ready to select.
+- My program outputs to the console, but this output is a string that could be returned anywhere in the software.
+
+
 The Problem
 -----------
 On screen keyboards are the bane of DVR users. To help alleviate the pain, one local company is asking you to implement part of a voice to text search for their DVR by developing an algorithm to script the on screen keyboard.
