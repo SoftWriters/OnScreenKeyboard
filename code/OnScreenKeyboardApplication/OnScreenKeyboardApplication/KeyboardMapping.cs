@@ -63,7 +63,7 @@ namespace OnScreenKeyboardApplication
             }
             else if(IsNumber(characterValue))
             {
-                convertedYPosition = ConvertNumberValueToY(characterValue);
+                convertedYPosition = ConvertNumberValue(characterValue) / 6;
             }
 
             return convertedYPosition;
@@ -79,7 +79,7 @@ namespace OnScreenKeyboardApplication
             }
             else if (IsNumber(characterValue))
             {
-                convertedXPosition = ConvertNumberValueToX(characterValue);
+                convertedXPosition = ConvertNumberValue(characterValue) % 6;
             }
 
             return convertedXPosition;
@@ -95,7 +95,7 @@ namespace OnScreenKeyboardApplication
             return characterValue > 47 && characterValue < 58;
         }
 
-        public int ConvertNumberValueToY(int characterValue)
+        public int ConvertNumberValue(int characterValue)
         {
             if(characterValue == 48)
             {
@@ -103,19 +103,7 @@ namespace OnScreenKeyboardApplication
             }
             else
             {
-                return (characterValue - 23) / 6;
-            }
-        }
-
-        public int ConvertNumberValueToX(int characterValue)
-        {
-            if (characterValue == 48)
-            {
-                return 5;
-            }
-            else
-            {
-                return (characterValue - 23) % 6;
+                return characterValue - 23;
             }
         }
     }
