@@ -19,6 +19,7 @@ namespace OnScreenKeyboardApplication
 
             SetDialogAttributes();
 
+            // Only convert text file if one is successfully selected
             if (OpenFileSuccess())
             {
                 SetupFileReader();
@@ -52,6 +53,7 @@ namespace OnScreenKeyboardApplication
 
         private static void SetDialogSelectableFileTypes()
         {
+            // Ensure that only text files are selected
             openFileDialog.DefaultExt = "txt";
             openFileDialog.Filter = "txt files (*.txt)|*.txt";
         }
@@ -70,6 +72,7 @@ namespace OnScreenKeyboardApplication
 
         private static void ReadInputLines()
         {
+            // Read all input at once to avoid slowness of multiple reads
             inputLines = inputReader.ReadToEnd();
         }
 
@@ -85,6 +88,7 @@ namespace OnScreenKeyboardApplication
 
         private static void WriteConvertedLines()
         {
+            // Write all lines at once to avoid slowness of multiple writes
             Console.WriteLine(convertedLines);
         }
 

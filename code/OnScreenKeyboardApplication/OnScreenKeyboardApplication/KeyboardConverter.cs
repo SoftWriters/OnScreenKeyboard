@@ -13,10 +13,12 @@ namespace OnScreenKeyboardApplication
 
             string convertedLines = "";
 
+            // Convert each separate line of the text file into keyboard movements
             foreach (string inputLine in splitInputLines)
             {
                 convertedLines += ConvertToKeyboardMovements(inputLine) + "\n";
             }
+
             return convertedLines;
         }
 
@@ -24,6 +26,7 @@ namespace OnScreenKeyboardApplication
         {
             keyboardMovementsLine = "";
 
+            // Our keyboard mapping can convert characters into keyboard movements
             keyboardMap = new KeyboardMapping();
 
             foreach (char inputCharacter in inputLine)
@@ -34,17 +37,18 @@ namespace OnScreenKeyboardApplication
                 }
                 else
                 {
+                    // Ensure all characters are uppercase to avoid confusion in handling them
                     AddKeyboardPositionMovements(char.ToUpper(inputCharacter));
                     AddSelectCharacter();
                 }
             }
 
-            keyboardMovementsLine = RemoveFinalCommaFromMovement();
+            keyboardMovementsLine = RemoveFinalCommaFromMovements();
 
             return keyboardMovementsLine;
         }
 
-        private string RemoveFinalCommaFromMovement()
+        private string RemoveFinalCommaFromMovements()
         {
             return keyboardMovementsLine.Remove(keyboardMovementsLine.Length - 1);
         }
