@@ -10,6 +10,11 @@ On Screen Keyboard
 	- Start the OnScreenKeyboard file.
 - My program assumes a user wants to select a text file to read with a GUI display and has a text file ready to select.
 - My program outputs to the console, but this output is a string that could be returned anywhere in the software.
+- My code is the following:
+	- OnScreenKeyboard.cs
+	- KeyboardConverter.cs
+	- KeyboardMapping.cs
+	- All other code is part of the VS Code generation that allows the program to run
 
 
 The Problem
