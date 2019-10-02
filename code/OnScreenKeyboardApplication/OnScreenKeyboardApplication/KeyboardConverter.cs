@@ -35,8 +35,8 @@ namespace OnScreenKeyboardApplication
                 else
                 {
                     AddKeyboardPositionMovements(char.ToUpper(inputCharacter));
+                    AddSelectCharacter();
                 }
-                AddSelectCharacter();
             }
 
             keyboardMovementsLine = RemoveFinalCommaFromMovement();
