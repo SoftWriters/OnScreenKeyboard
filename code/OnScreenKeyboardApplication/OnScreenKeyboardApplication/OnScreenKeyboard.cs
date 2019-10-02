@@ -19,19 +19,20 @@ namespace OnScreenKeyboardApplication
 
             SetDialogAttributes();
 
-            while (!OpenFileSuccess()) ;
+            if (OpenFileSuccess())
+            {
+                SetupFileReader();
 
-            SetupFileReader();
+                ReadInputLines();
 
-            ReadInputLines();
+                CreateKeyboardConverterObject();
 
-            CreateKeyboardConverterObject();
+                ConvertInputTextToKeyboard();
 
-            ConvertInputTextToKeyboard();
+                WriteConvertedLines();
 
-            WriteConvertedLines();
-
-            CloseReaderStream();
+                CloseReaderStream();
+            }
         }
 
         private static void CreateOpenFileDialogObject()
