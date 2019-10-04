@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Users\\Raizel Seliger\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\Raizel Seliger\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Raizel Seliger\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
         "packagesPath": "C:\\Users\\Raizel Seliger\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\Users\\Raizel Seliger\\source\\repos\\ConsoleApp1\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

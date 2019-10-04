@@ -1,6 +1,8 @@
-﻿using System;
+﻿using ConsoleApp1.files;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace ConsoleApp1
 {
@@ -8,97 +10,65 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            Keyboard keyboard = new Keyboard();
+            var keys = keyboard.keys;
             var path = @"C:\Users\Raizel Seliger\source\repos\ConsoleApp1\.vs\ConsoleApp1\v16\text.txt";
-            string output = "";
-            int index = (int)'A';
 
-            void PreviousLine()
+            //Follow path and call the methods that add to the output
+            bool TrackPathAndSelect(string letter)
             {
-                output += "U";
-                index -= 6;
-                Console.WriteLine("Dropped to letter " + (char)index);
+                while (keyboard.CurrentPosX > keyboard.DesiredPosX) keyboard.Up();
+                while (keyboard.CurrentPosX < keyboard.DesiredPosX) keyboard.Down();
+                while (keyboard.CurrentPosY > keyboard.DesiredPosY) keyboard.Left();
+                while (keyboard.CurrentPosY < keyboard.DesiredPosY) keyboard.Right();
+                keyboard.Select();
+                return (keyboard.CurrentPosX == keyboard.DesiredPosX) && 
+                    (keyboard.CurrentPosY == keyboard.DesiredPosY);
             }
 
-            void MoveRight()
+            //locate the desired letter and set the position in the model, return the position as a string
+            string SetDesiredPosition(string letter)
             {
-                output +=  "R";
-                index += 1;
-                Console.WriteLine("Moved Right to letter " + (char)index);
-            }
-
-            void MoveLeft()
-            {
-                output += "L";
-                index -= 1;
-                Console.WriteLine("Moved Left to letter " + (char)index);
-            }
-
-            void nextLine()
-            {
-                output += "D";
-                index += 6;
-                Console.WriteLine("Dropped to letter " + (char)index);
-            }
-
-            void select(char letter)
-            {
-                if ((int)letter == index) output += "#";
-            }
-
-            bool Matches(char letter)
-            {
-                return (int)letter == index;
-            }
-
-            void CheckFullLineBack(char letter)
-            {
-                while ((int)letter < index - 6) PreviousLine();
-            }
-
-            void CheckFullLineForward(char letter)
-            {
-                while ((int)letter > index + 6) nextLine();
-            }
-
-            void CheckOneLetterBack(char letter)
-            {
-                while ((int)letter < index)
+                bool found = false;
+                int x = 0;
+                int y = 0;
+                foreach (KeyValuePair<int, string[]> kv in keys)
                 {
-                    MoveLeft();
-                    select(letter);
-                }
-            }
-
-            void CheckOneLetterForward(char letter)
-            {
-                while ((int)letter > index)
-                {
-                    MoveRight();
-                    select(letter);
-                }
-            }
-
-            void FindAndSelect(char letter)
-            {
-                CheckFullLineBack(letter);
-                CheckOneLetterBack(letter);
-                CheckFullLineForward(letter);
-                CheckOneLetterForward(letter);
-            }
-
-            string ReturnPath(string[] lines)
-            {
-                foreach (string line in lines)
-                {
-                    var upperline = line.ToUpper();
-                    foreach (char letter in upperline)
+                    for(var i = 0; i < kv.Value.Length; i++)
                     {
-                        if (Matches(letter)) select(letter); else FindAndSelect(letter);
+                        if (kv.Value[i].Equals(letter))
+                        {
+                            x = keyboard.DesiredPosX = kv.Key;
+                            y = keyboard.DesiredPosY = i;
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (found) break;
+                }
+                return x.ToString() + y.ToString();
+            }
+
+            //run the program for each letter in the file
+            //Todo each lines output is to be stored seperately, maybe by creating a list
+            string Output(string textfile)
+            {
+                foreach (string line in File.ReadAllLines(textfile))
+                {
+                    var upperline = line.ToUpper().Select(x => x.ToString());
+                    foreach (string letter in upperline)
+                    {
+                        if (letter.Equals(" ")) keyboard.Output += "S";
+                        else
+                        {
+                            SetDesiredPosition(letter);
+                            TrackPathAndSelect(letter);
+                        }
                     }
                 }
-                return output;
+                return keyboard.Output;
             }
-            Console.WriteLine(ReturnPath(File.ReadAllLines(path)));
+            Console.WriteLine(Output(path));
             Console.ReadKey();
         }
     }
