@@ -51,7 +51,6 @@ namespace ConsoleApp1.files
             Thread.Sleep(3000);
             Environment.Exit(0);
         }
-
         //run the program for each letter in the file
         //Todo each lines output is to be stored seperately, maybe by creating a list
 
@@ -67,7 +66,7 @@ namespace ConsoleApp1.files
                     TrackPathAndSelect(letter, kb);
                 }
             }
-            return kb.Output;
+            return String.Join(",", kb.Output.ToCharArray());
         }
 
         public List<string> Output(string textfile)
@@ -85,7 +84,7 @@ namespace ConsoleApp1.files
         {
             foreach (string output in Output(textfile))
             {
-                Console.WriteLine(String.Join(",", output.ToCharArray()));
+                Console.WriteLine(output);
             }
         }
     }

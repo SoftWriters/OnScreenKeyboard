@@ -19,7 +19,7 @@ namespace ConsoleApp1
                 var filename = Console.ReadLine();
                 if (filename.ToLower().Equals("exit")) pm.Exit();
                 var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
-                pm.Write(path);
+                if (File.Exists(path) && Path.GetExtension(path).Equals(".txt")) pm.Write(path); else Console.WriteLine("file does not exist! Try again!");
             }
         }
     }

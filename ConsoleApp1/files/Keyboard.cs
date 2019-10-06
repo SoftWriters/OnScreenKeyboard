@@ -28,6 +28,8 @@ namespace ConsoleApp1.files
                 { 5, new string[]{ "Y", "Z", "1", "2", "3", "4"} },
                 { 6, new string[]{ "5", "6", "7", "8", "9", "0"} }
             };
+
+        //"D,R,#,U,R,R,R,#,D,R,#,#,D,L,L,L,#"
         public (string output, int currentposx) Up()
         {
             if (this.CurrentPosX > 1)
@@ -37,10 +39,14 @@ namespace ConsoleApp1.files
             }
             return (this.Output, this.CurrentPosX);
         }
-        public void Down()
+        public (string output, int currentposx) Down()
         {
-            this.Output += "D";
-            this.CurrentPosX++;
+            if (this.CurrentPosX < 6)
+            {
+                this.Output += "D";
+                this.CurrentPosX++;
+            }
+            return (this.Output, this.CurrentPosX);
         }
         public void Right()
         {
