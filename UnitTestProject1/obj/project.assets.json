@@ -5846,9 +5846,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\UnitTestProject1\\UnitTestProject1.csproj",
-      "projectName": "UnitTestProject1",
-      "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\UnitTestProject1\\UnitTestProject1.csproj",
+      "projectUniqueName": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\UnitTestProject1\\UnitTest.csproj",
+      "projectName": "UnitTest",
+      "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\UnitTestProject1\\UnitTest.csproj",
       "packagesPath": "C:\\Users\\Raizel Seliger\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\UnitTestProject1\\obj\\",
       "projectStyle": "PackageReference",

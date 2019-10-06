@@ -28,10 +28,14 @@ namespace ConsoleApp1.files
                 { 5, new string[]{ "Y", "Z", "1", "2", "3", "4"} },
                 { 6, new string[]{ "5", "6", "7", "8", "9", "0"} }
             };
-        public void Up()
+        public (string output, int currentposx) Up()
         {
-            this.Output += "U";
-            this.CurrentPosX--;
+            if (this.CurrentPosX > 1)
+            {
+                this.Output += "U";
+                this.CurrentPosX--;
+            }
+            return (this.Output, this.CurrentPosX);
         }
         public void Down()
         {
