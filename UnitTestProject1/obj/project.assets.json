@@ -5846,11 +5846,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Raizel Seliger\\source\\repos\\ConsoleApp1\\UnitTestProject1\\UnitTestProject1.csproj",
+      "projectUniqueName": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\UnitTestProject1\\UnitTestProject1.csproj",
       "projectName": "UnitTestProject1",
-      "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\ConsoleApp1\\UnitTestProject1\\UnitTestProject1.csproj",
+      "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\UnitTestProject1\\UnitTestProject1.csproj",
       "packagesPath": "C:\\Users\\Raizel Seliger\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Raizel Seliger\\source\\repos\\ConsoleApp1\\UnitTestProject1\\obj\\",
+      "outputPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\UnitTestProject1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5869,8 +5869,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Raizel Seliger\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
-              "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj"
+            "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj": {
+              "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj"
             }
           }
         }
