@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace ConsoleApp1.files
 {
     public class ProgramMethods
     {
-       
+
         //locate the desired letter and set the position in the model, return the position as a string
         public (int x, int y) SetDesiredPosition(string letter, Keyboard kb)
         {
@@ -44,26 +45,48 @@ namespace ConsoleApp1.files
                 (kb.CurrentPosY == kb.DesiredPosY);
         }
 
-        
+        public void Exit()
+        {
+            Console.WriteLine("Have a Nice Day!");
+            Thread.Sleep(3000);
+            Environment.Exit(0);
+        }
 
         //run the program for each letter in the file
         //Todo each lines output is to be stored seperately, maybe by creating a list
-        public string Output(string textfile, Keyboard kb)
+
+        public string LineOutput(string line, Keyboard kb)
         {
-            foreach (string line in File.ReadAllLines(textfile))
+            var upperline = line.ToUpper().Select(x => x.ToString());
+            foreach (string letter in upperline)
             {
-                var upperline = line.ToUpper().Select(x => x.ToString());
-                foreach (string letter in upperline)
+                if (letter.Equals(" ")) kb.Output += "S";
+                else
                 {
-                    if (letter.Equals(" ")) kb.Output += "S";
-                    else
-                    {
-                        SetDesiredPosition(letter, kb);
-                        TrackPathAndSelect(letter, kb);
-                    }
+                    SetDesiredPosition(letter, kb);
+                    TrackPathAndSelect(letter, kb);
                 }
             }
             return kb.Output;
+        }
+
+        public List<string> Output(string textfile)
+        {
+            List<string> LineOutputs = new List<string>();
+            foreach (string line in File.ReadAllLines(textfile))
+            {
+                Keyboard keyboard = new Keyboard();
+                LineOutputs.Add(LineOutput(line, keyboard));
+            }
+            return LineOutputs;
+        }
+
+        public void Write(string textfile)
+        {
+            foreach (string output in Output(textfile))
+            {
+                Console.WriteLine(String.Join(",", output.ToCharArray()));
+            }
         }
     }
 }

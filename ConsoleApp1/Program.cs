@@ -11,11 +11,16 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             ProgramMethods pm = new ProgramMethods();
-            Keyboard keyboard = new Keyboard();
-            var path = @"C:\Users\Raizel Seliger\source\repos\ConsoleApp1\.vs\ConsoleApp1\v16\text.txt";
+           
 
-            Console.WriteLine(pm.Output(path, keyboard));
-            Console.ReadKey();
+            while (true)
+            {
+                Console.WriteLine("Please create a text file on your desktop and write the file name or type exit to leave!");
+                var filename = Console.ReadLine();
+                if (filename.ToLower().Equals("exit")) pm.Exit();
+                var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), filename);
+                pm.Write(path);
+            }
         }
     }
 }
