@@ -8,6 +8,7 @@ namespace ConsoleApp1.files
 {
     public class ProgramMethods
     {
+       
         //locate the desired letter and set the position in the model, return the position as a string
         public (int x, int y) SetDesiredPosition(string letter, Keyboard kb)
         {
@@ -30,10 +31,11 @@ namespace ConsoleApp1.files
             }
             return (x, y);
         }
-        
+
         //Follow path and call the methods that add to the output
         public bool TrackPathAndSelect(string letter, Keyboard kb)
         {
+            while (kb.CurrentPosX > kb.DesiredPosX) kb.Up();
             while (kb.CurrentPosX < kb.DesiredPosX) kb.Down();
             while (kb.CurrentPosY > kb.DesiredPosY) kb.Left();
             while (kb.CurrentPosY < kb.DesiredPosY) kb.Right();
@@ -41,6 +43,9 @@ namespace ConsoleApp1.files
             return (kb.CurrentPosX == kb.DesiredPosX) &&
                 (kb.CurrentPosY == kb.DesiredPosY);
         }
+
+        
+
         //run the program for each letter in the file
         //Todo each lines output is to be stored seperately, maybe by creating a list
         public string Output(string textfile, Keyboard kb)
