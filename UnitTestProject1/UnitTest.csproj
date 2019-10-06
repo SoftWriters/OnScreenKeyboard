@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp1\ConsoleApp1.csproj" />
+    <ProjectReference Include="..\ConsoleApp1\OnScreenKeyboard.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp1.files
+namespace OnScreenKeyboard.files
 {
     public class Keyboard
     {

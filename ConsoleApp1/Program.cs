@@ -1,10 +1,10 @@
-﻿using ConsoleApp1.files;
+﻿using OnScreenKeyboard.files;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ConsoleApp1
+namespace OnScreenKeyboard
 {
     class Program
     {

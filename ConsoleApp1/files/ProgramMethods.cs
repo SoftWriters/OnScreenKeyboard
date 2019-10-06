@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace ConsoleApp1.files
+namespace OnScreenKeyboard.files
 {
     public class ProgramMethods
     {

@@ -1620,14 +1620,14 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "ConsoleApp1/1.0.0": {
+      "OnScreenKeyboard/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
-          "bin/placeholder/ConsoleApp1.dll": {}
+          "bin/placeholder/OnScreenKeyboard.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ConsoleApp1.dll": {}
+          "bin/placeholder/OnScreenKeyboard.dll": {}
         }
       }
     }
@@ -5824,19 +5824,19 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "ConsoleApp1/1.0.0": {
+    "OnScreenKeyboard/1.0.0": {
       "type": "project",
-      "path": "../ConsoleApp1/ConsoleApp1.csproj",
-      "msbuildProject": "../ConsoleApp1/ConsoleApp1.csproj"
+      "path": "../ConsoleApp1/OnScreenKeyboard.csproj",
+      "msbuildProject": "../ConsoleApp1/OnScreenKeyboard.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "ConsoleApp1 >= 1.0.0",
       "MSTest.TestAdapter >= 1.4.0",
       "MSTest.TestFramework >= 1.4.0",
       "Microsoft.NET.Test.Sdk >= 16.0.1",
-      "Microsoft.NETCore.App >= 2.2.0"
+      "Microsoft.NETCore.App >= 2.2.0",
+      "OnScreenKeyboard >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5869,8 +5869,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj": {
-              "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj"
+            "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\OnScreenKeyboard.csproj": {
+              "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\OnScreenKeyboard.csproj"
             }
           }
         }

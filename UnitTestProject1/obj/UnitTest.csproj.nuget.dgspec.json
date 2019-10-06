@@ -4,12 +4,12 @@
     "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\UnitTestProject1\\UnitTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\OnScreenKeyboard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj",
-        "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\OnScreenKeyboard.csproj",
+        "projectName": "OnScreenKeyboard",
+        "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\OnScreenKeyboard.csproj",
         "packagesPath": "C:\\Users\\Raizel Seliger\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
@@ -82,8 +82,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj": {
-                "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\ConsoleApp1.csproj"
+              "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\OnScreenKeyboard.csproj": {
+                "projectPath": "C:\\Users\\Raizel Seliger\\source\\repos\\OnScreenKeyboard\\ConsoleApp1\\OnScreenKeyboard.csproj"
               }
             }
           }
