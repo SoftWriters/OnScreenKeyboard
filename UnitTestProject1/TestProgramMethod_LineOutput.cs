@@ -34,5 +34,12 @@ namespace UnitTest
             var spacedhello = pm.LineOutput("h e l l o", kb);
             Assert.AreEqual(spacedhello, "D,R,#,S,U,R,R,R,#,S,D,R,#,S,#,S,D,L,L,L,#", "string does not match");
         }
+
+        [TestMethod]
+
+        public void LineOutput_IfNullReturnsEmpty()
+        {
+            var empty = 
+        }
     }
 }

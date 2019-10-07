@@ -56,17 +56,28 @@ namespace OnScreenKeyboard
 
         public string LineOutput(string line, Keyboard kb)
         {
-            var upperline = line.ToUpper().Select(x => x.ToString());
-            foreach (string letter in upperline)
+            try
             {
-                if (letter.Equals(" ")) kb.Output += "S";
-                else
+                var upperline = line.ToUpper().Select(x => x.ToString());
+                foreach (string letter in upperline)
                 {
-                    SetDesiredPosition(letter, kb);
-                    TrackPathAndSelect(kb);
+                    if (letter.Equals(" ")) kb.Output += "S";
+                    else
+                    {
+                        var found = SetDesiredPosition(letter, kb);
+                        if (found.letterExists) TrackPathAndSelect(kb);
+                    }
                 }
+                return String.Join(",", kb.Output.ToCharArray());
             }
-            return String.Join(",", kb.Output.ToCharArray());
+            catch(Exception x)
+            {
+            }
+            finally
+            {
+                Console.WriteLine("no valid members in file");
+            }
+            return "";
         }
 
         public List<string> Output(string textfile)
