@@ -24,7 +24,7 @@ namespace UnitTest
             Keyboard kb = new Keyboard();
             var results = kb.Down();
             for (var i = 0; i < 100; i++) { results = kb.Down(); }
-            Assert.AreEqual(results.Item2, 6, "CurrentPosX is " + results.Item2 + " but should be 6");
+            Assert.AreEqual(results.currentposx, 6, "CurrentPosX is " + results.currentposx + " but should be 6");
         }
 
     }

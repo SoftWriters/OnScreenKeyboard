@@ -13,10 +13,12 @@ namespace UnitTest
         [TestMethod]
         public void Output_Initial()
         {
+            bool fileExists = true;
             var pm = new ProgramMethods();
             string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "OSKtest");
             if (!File.Exists(path))
             {
+                fileExists = false;
                 using (StreamWriter sw = File.CreateText(path))
                 {
                     sw.WriteLine("Hello");
@@ -24,7 +26,7 @@ namespace UnitTest
             }
             var list = pm.Output(path);
             Assert.AreEqual(list[0], "D,R,#,U,R,R,R,#,D,R,#,#,D,L,L,L,#");
-     
+            if (!fileExists) File.Delete(path);    
         }
     }
 }
