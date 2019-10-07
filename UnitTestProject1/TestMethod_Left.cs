@@ -13,10 +13,17 @@ namespace UnitTest
         public void InitialValues_Left()
         {
             Keyboard kb = new Keyboard();
-            kb.Left();
-            Assert.AreEqual("L", kb.Output, "Output is " + kb.Output + " but should be L");
-            kb.Left();
-            Assert.AreEqual(-2, kb.CurrentPosY, "CurrentPosY is " + kb.CurrentPosY + " but should be -2");
+            var result = kb.Left();
+            Assert.AreEqual(null, result.output, "Output is " + kb.Output + " but should be null");
+            Assert.AreEqual(0, result.currentposy, "CurrentPosY is " + kb.CurrentPosY + " but should be 0");
+        }
+
+        [TestMethod]
+        public void MinIsZero_Left()
+        {
+            Keyboard kb = new Keyboard();
+            var result = kb.Left();
+            Assert.AreEqual(0, result.currentposy, "CurrentPosY is " + kb.CurrentPosY + " but should be 0");
         }
     }
 }

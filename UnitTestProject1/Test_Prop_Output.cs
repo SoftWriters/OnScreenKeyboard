@@ -9,6 +9,7 @@ namespace UnitTest
     [TestClass]
     public class Test_Prop_Output
     {
+        
         [TestMethod]
         public void InitialValues_Output()
         {

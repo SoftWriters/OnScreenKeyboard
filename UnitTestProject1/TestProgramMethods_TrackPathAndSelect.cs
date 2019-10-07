@@ -12,7 +12,15 @@ namespace UnitTest
         [TestMethod]
         public void TrackPathAndSelect_Initial()
         {
+            var pm = new ProgramMethods();
+            var kb = new Keyboard();
 
+            kb.DesiredPosX = 6;
+            kb.DesiredPosY = 5;
+
+            bool didExecutePath = pm.TrackPathAndSelect(kb);
+
+            Assert.AreEqual(true, didExecutePath, "Path was not executed properly");
         }
     }
 }

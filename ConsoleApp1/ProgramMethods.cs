@@ -11,7 +11,7 @@ namespace OnScreenKeyboard
     {
 
         //locate the desired letter and set the position in the model, return the position as a string
-        public (int x, int y) SetDesiredPosition(string letter, Keyboard kb)
+        public (bool letterExists, int x, int y) SetDesiredPosition(string letter, Keyboard kb)
         {
             bool found = false;
             int x = 0;
@@ -30,11 +30,11 @@ namespace OnScreenKeyboard
                 }
                 if (found) break;
             }
-            return (x, y);
+            return (found, x, y);
         }
 
         //Follow path and call the methods that add to the output
-        public bool TrackPathAndSelect(string letter, Keyboard kb)
+        public bool TrackPathAndSelect(Keyboard kb)
         {
             while (kb.CurrentPosX > kb.DesiredPosX) kb.Up();
             while (kb.CurrentPosX < kb.DesiredPosX) kb.Down();
@@ -63,7 +63,7 @@ namespace OnScreenKeyboard
                 else
                 {
                     SetDesiredPosition(letter, kb);
-                    TrackPathAndSelect(letter, kb);
+                    TrackPathAndSelect(kb);
                 }
             }
             return String.Join(",", kb.Output.ToCharArray());

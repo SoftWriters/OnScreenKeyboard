@@ -47,17 +47,30 @@ namespace OnScreenKeyboard
             }
             return (this.Output, this.CurrentPosX);
         }
-        public void Right()
+        public (string output, int currentposy) Right()
         {
-            this.Output += "R";
-            this.CurrentPosY++;
+            if(this.CurrentPosY < 5)
+            {
+                this.Output += "R";
+                this.CurrentPosY++;
+            }
+            return (this.Output, this.CurrentPosY);
         }
-        public void Left()
+        public (string output, int currentposy) Left()
         {
-            this.Output += "L";
-            this.CurrentPosY--;
+            if (this.CurrentPosY > 0)
+            {
+                this.Output += "L";
+                this.CurrentPosY--;
+            }
+            return (this.Output, this.CurrentPosY);
         }
 
-        internal void Select() => this.Output += "#";
+        public string Select()
+        {
+            this.Output += "#";
+            return this.Output;
+        }
+
     }
 }

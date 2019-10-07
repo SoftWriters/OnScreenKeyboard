@@ -13,7 +13,8 @@ namespace UnitTest
         public void InitialValues_Right()
         {
             Keyboard kb = new Keyboard();
-            Assert.AreEqual(null, kb.Output, "Output is " + kb.Output + " but should be null");
+            var result = kb.Right();
+            Assert.AreEqual(result.currentposy, 1, "Y coordinate should be 1 after moving Right once");
         }
     }
 }

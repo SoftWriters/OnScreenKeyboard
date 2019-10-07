@@ -13,7 +13,8 @@ namespace UnitTest
         public void InitialValues_Select()
         {
             Keyboard kb = new Keyboard();
-            Assert.AreEqual(null, kb.Output, "Output is " + kb.Output + " but should be null");
+            kb.Select();
+            Assert.AreEqual("#", kb.Output, "Output is " + kb.Output + " but should be #");
         }
     }
 }
