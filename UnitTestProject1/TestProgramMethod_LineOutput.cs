@@ -39,7 +39,9 @@ namespace UnitTest
 
         public void LineOutput_IfNullReturnsEmpty()
         {
-            var empty = 
+            var empty = pm.LineOutput(null, kb);
+            Assert.AreEqual(empty, "", "should return empty string");
+
         }
     }
 }
