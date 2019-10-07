@@ -72,10 +72,7 @@ namespace OnScreenKeyboard
             }
             catch(Exception x)
             {
-            }
-            finally
-            {
-                Console.WriteLine("no valid members in file");
+                Console.WriteLine("no valid members on line");
             }
             return "";
         }
