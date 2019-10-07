@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OnScreenKeyboard.files
+namespace OnScreenKeyboard
 {
     public class Keyboard
     {
@@ -29,7 +29,6 @@ namespace OnScreenKeyboard.files
                 { 6, new string[]{ "5", "6", "7", "8", "9", "0"} }
             };
 
-        //"D,R,#,U,R,R,R,#,D,R,#,#,D,L,L,L,#"
         public (string output, int currentposx) Up()
         {
             if (this.CurrentPosX > 1)

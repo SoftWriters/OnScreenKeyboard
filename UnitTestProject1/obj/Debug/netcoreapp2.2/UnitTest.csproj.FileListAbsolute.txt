@@ -6,8 +6,6 @@ C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\bin\Debug
 C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\bin\Debug\netcoreapp2.2\UnitTest.runtimeconfig.dev.json
 C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\bin\Debug\netcoreapp2.2\UnitTest.dll
 C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\bin\Debug\netcoreapp2.2\UnitTest.pdb
-C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\bin\Debug\netcoreapp2.2\ConsoleApp1.dll
-C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\bin\Debug\netcoreapp2.2\ConsoleApp1.pdb
 C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\obj\Debug\netcoreapp2.2\UnitTest.csprojAssemblyReference.cache
 C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\obj\Debug\netcoreapp2.2\UnitTest.csproj.CoreCompileInputs.cache
 C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\obj\Debug\netcoreapp2.2\UnitTest.AssemblyInfoInputs.cache
@@ -15,3 +13,5 @@ C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\obj\Debug
 C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\obj\Debug\netcoreapp2.2\UnitTest.csproj.CopyComplete
 C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\obj\Debug\netcoreapp2.2\UnitTest.dll
 C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\obj\Debug\netcoreapp2.2\UnitTest.pdb
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\bin\Debug\netcoreapp2.2\OnScreenKeyboard.dll
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\UnitTestProject1\bin\Debug\netcoreapp2.2\OnScreenKeyboard.pdb

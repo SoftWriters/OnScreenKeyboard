@@ -1,4 +1,4 @@
-﻿using OnScreenKeyboard.files;
+﻿using OnScreenKeyboard;
 using System;
 using System.Collections.Generic;
 using System.IO;
