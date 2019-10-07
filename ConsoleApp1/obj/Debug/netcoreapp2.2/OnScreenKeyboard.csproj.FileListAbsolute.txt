@@ -1,0 +1,11 @@
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\ConsoleApp1\bin\Debug\netcoreapp2.2\OnScreenKeyboard.deps.json
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\ConsoleApp1\bin\Debug\netcoreapp2.2\OnScreenKeyboard.runtimeconfig.json
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\ConsoleApp1\bin\Debug\netcoreapp2.2\OnScreenKeyboard.runtimeconfig.dev.json
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\ConsoleApp1\bin\Debug\netcoreapp2.2\OnScreenKeyboard.dll
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\ConsoleApp1\bin\Debug\netcoreapp2.2\OnScreenKeyboard.pdb
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\ConsoleApp1\obj\Debug\netcoreapp2.2\OnScreenKeyboard.csprojAssemblyReference.cache
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\ConsoleApp1\obj\Debug\netcoreapp2.2\OnScreenKeyboard.csproj.CoreCompileInputs.cache
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\ConsoleApp1\obj\Debug\netcoreapp2.2\OnScreenKeyboard.AssemblyInfoInputs.cache
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\ConsoleApp1\obj\Debug\netcoreapp2.2\OnScreenKeyboard.AssemblyInfo.cs
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\ConsoleApp1\obj\Debug\netcoreapp2.2\OnScreenKeyboard.dll
+C:\Users\Raizel Seliger\source\repos\OnScreenKeyboard\ConsoleApp1\obj\Debug\netcoreapp2.2\OnScreenKeyboard.pdb
