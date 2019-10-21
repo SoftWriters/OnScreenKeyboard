@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OnScreenKeyboard</name>
+    </assembly>
+    <members>
+        <member name="T:OnScreenKeyboard.CursorTracker">
+            <summary>
+            <c>CursorTracker</c> class.
+            Contains all methods for tracking cursor path and generating the cursor path script
+            in a specified format.
+            </summary>
+        </member>
+        <member name="M:OnScreenKeyboard.CursorTracker.GetCursorPathScript(System.String)">
+            <summary>
+            Finds the cursor path on the keyboard for the search term string
+            and generates cursor path script string in a specified format.
+            </summary>
+            <returns>
+            Cursor path script string.
+            </returns>
+            <param name = "inputString" >Search term string.</param> 
+        </member>
+        <member name="M:OnScreenKeyboard.CursorTracker.GetPathBetweenKeys(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32})">
+            <summary>
+            Finds the cursor path between two keys.
+            </summary>
+            <returns>
+            A list that contains elements which correspond to the sequence of cursor moves from one key to another.
+            </returns>
+            <param name = "currentKeyLocation" >Postion of key at which the cursor is currently located.</param> 
+            <param name = "targetKeyLocation" >Postion of key to which the cursor needs to move.</param> 
+        </member>
+        <member name="M:OnScreenKeyboard.CursorTracker.GetMoveDirection(System.Int32,System.Boolean)">
+            <summary>
+            Finds cursor move direction either in row or in column.
+            </summary>
+            <returns>
+            Move direction either in row or in column.
+            </returns>
+            <param name = "offset" >Row or column offset.</param> 
+            <param name = "isMoveInRow" >Defines if cursor moves in row or in column.</param> 
+        </member>
+        <member name="T:OnScreenKeyboard.Keyboard">
+            <summary>
+            <c>Keyboard</c> class.
+            Contains keyboard layout and method to locate keys.
+            </summary>
+        </member>
+        <member name="M:OnScreenKeyboard.Keyboard.GetKeyLocation(System.Char)">
+            <summary>
+            Gets the key location from its character.
+            </summary>
+            <returns>
+            A pair of numbers which correspond to the row and column of the key position.
+            </returns>
+            <param name = "character" >Key's character.</param>   
+        </member>
+    </members>
+</doc>
