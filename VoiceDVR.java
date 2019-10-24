@@ -6,11 +6,15 @@ public class VoiceDVR {
 	private ArrayList<String> searchTerms = new ArrayList<String>();		
 	private HashMap<Character, Point> charToPoint = new HashMap<Character, Point>();
 
+	// Costructor function, sets up hashmap and reads in searchTerms
 	public VoiceDVR(String filename){
 		getTerms(filename, searchTerms);
 		makeCharToPoint(charToPoint);
 	}
 
+	// Reads searchterms line by line from the provided file and puts them into a List
+	// param filename	name of the file to read from
+	// param terms		List to fill with parsed terms
 	private void getTerms(String filename, ArrayList<String> terms){
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File(filename)));
@@ -24,15 +28,17 @@ public class VoiceDVR {
 		}
 	}
 
+	// Translates all provided terms and writes them to a file
+	// param OutputFilename		name of file to write out to
 	public void Translate(String OutputFilename){
 		try{
 			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(OutputFilename)));;
 			for( String s: searchTerms){
-				ArrayList<String> output = translateLine(s, charToPoint);
+				ArrayList<String> output = translateLine(s, charToPoint); 	// Get translation for string s
 				StringJoiner outputJoiner = new StringJoiner(",");
 				for(String x: output)
-					outputJoiner.add(x);
-				bw.write(outputJoiner.toString() + "\n");
+					outputJoiner.add(x);			// Add each individual string for comma delimination
+				bw.write(outputJoiner.toString() + "\n");	// Write out to file
 			}
 			bw.close();
 		}catch( Exception e) {
@@ -40,30 +46,32 @@ public class VoiceDVR {
 		}
 	}
 
+	// Translate an individual string to the DVR moves needed to make it
+	// param term		string to translate
+	// param ctp 		hashtable to use in translation
+	// return ArrayList<String>	list of strings forming the necessary DVR moves
 	private ArrayList<String> translateLine(String term, HashMap<Character, Point> ctp){
-		Point pointAt = new Point(0,0);
-		char charAt = 'A';
+		Point pointAt = new Point(0,0);		// Always start at 0,0 which is A
 		ArrayList<String> output = new ArrayList<String>();
 		for(int i = 0; i < term.length(); i++){
-			char c = Character.toUpperCase(term.charAt(i));
-			if(c == ' '){
+			char c = Character.toUpperCase(term.charAt(i));		// Grab next character making sure it is uppercase
+			if(c == ' '){						// If it is a space add to output and skip to next loop iteration
 				output.add("S");
-				charAt = c;	
 				continue;
 			}
-			Point newPoint = ctp.get(c);
-			int diffx =(int)(newPoint.getX() - pointAt.getX());
+			Point newPoint = ctp.get(c);				// Point location of char c
+			int diffx =(int)(newPoint.getX() - pointAt.getX());	// Get the difference in x and y from last point to new point
 			int diffy =(int)(newPoint.getY() - pointAt.getY());
-			while( diffy != 0){
+			while( diffy != 0){					// If y is zero then y-coordinate is already correct
 				if( diffy < 0){
-					output.add("U");
+					output.add("U");			// If y is negative, "move" the cursor up and add U to the output
 					diffy++;
 				}else{
-					output.add("D");
+					output.add("D");			// If y is positive, "move" the cursor down and add D to the output
 					diffy--;	
 				}				
 			}
-			while( diffx != 0){
+			while( diffx != 0){					// Similar to above while loop except for x-coordinate
 				if( diffx < 0){
 					output.add("L");
 					diffx++;
@@ -72,13 +80,15 @@ public class VoiceDVR {
 					diffx--;	
 				}				
 			}
-			output.add("#");
-			pointAt.setLocation(newPoint);
-			charAt = c;	
+			output.add("#");					// At correct coordinates so select the character
+			pointAt.setLocation(newPoint);				// Update where the cursor is at
 		}
 		return output;
 	}
 	
+	// Makes the hashtable used to find the points of every character
+	// Static initializer since the HashMap is the same every time
+	// param ctp	the hashmap to fill		
 	private void makeCharToPoint(HashMap<Character, Point> ctp){
 		ctp.put('A', new Point(0,0));
 		ctp.put('B', new Point(1,0));
