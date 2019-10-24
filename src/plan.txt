@@ -15,7 +15,7 @@ Keyboard components:
 Steps to implement this:
 1. Create classes and skeletons - done
 2. Implement Driver.java
-    a. Create Keyboard object
+    a. Create Keyboard object from file
     b. Get file input, read through each line
     c. Pass each line to keyboard.scriptLine()
     d. Print out the result
