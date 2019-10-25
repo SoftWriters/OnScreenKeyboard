@@ -1,26 +1,35 @@
 public class Point {
 
+    /**
+     * The coordinate pair of this object
+     */
     private int i;
     private int j;
 
+    /**
+     * Default constructor initializes both to 0
+     */
     public Point() {
         i = 0;
         j = 0;
     }
 
-    public int getI() {
+    /**
+     * Getters and setters for both i and j
+     */
+    int getI() {
         return i;
     }
 
-    public int getJ() {
+    int getJ() {
         return j;
     }
 
-    public void setI(int i) {
+    void setI(int i) {
         this.i = i;
     }
 
-    public void setJ(int j) {
+    void setJ(int j) {
         this.j = j;
     }
 }

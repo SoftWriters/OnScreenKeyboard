@@ -41,3 +41,6 @@ Steps to implement this:
                 Point(i, j)
                 int getI()
                 int getJ()
+
+
+** NOTE: Not all of the above mentioned points were used in the final design, made some changes along the way **

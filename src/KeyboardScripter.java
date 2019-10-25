@@ -14,8 +14,10 @@ public class KeyboardScripter {
 
         // Strings to be used to access files
         String rootPath = "/Users/michaelbarton/IdeaProjects/OnScreenKeyboard/src/";
-        String alphabeticalFileName = "keyboardLayouts/alphabeticalLayout.txt";
-        String qwertyFileName = "keyboardLayouts/qwertyLayout.txt";
+        String keyboardLayoutsPath = "keyboardLayouts/";
+        String inputFilesPath = "inputFiles/";
+        String alphabeticalFileName = "alphabeticalLayout.txt";
+        String qwertyFileName = "qwertyLayout.txt";
 
         // Other attributes needed for main
         Scanner sc = new Scanner(System.in);
@@ -33,27 +35,32 @@ public class KeyboardScripter {
 
         // Create Keyboard based on keyboard type inputted from user
         if(keyboardType.equals("alphabetical")) {
-            keyboardLayout = createKeyboardLayout(rootPath + alphabeticalFileName);
+            keyboardLayout = createKeyboardLayout(rootPath + keyboardLayoutsPath + alphabeticalFileName);
         } else {
-            keyboardLayout = createKeyboardLayout(rootPath + qwertyFileName);
+            keyboardLayout = createKeyboardLayout(rootPath + keyboardLayoutsPath + qwertyFileName);
         }
 
         keyboard = new Keyboard(keyboardLayout);
 
-        // For testing only
+        System.out.println("\nHere's what your keyboard looks like!");
         print2DArray(keyboardLayout);
 
         // Obtain file name to read through and script
         System.out.print("\nEnter the file name that you would like to script: ");
         scriptFileName = sc.nextLine();
 
+        System.out.println("\nResults:\n");
+
         // Open file, read through and script each line
         try {
-            BufferedReader br = new BufferedReader(new FileReader(new File(rootPath + scriptFileName)));
+            BufferedReader br = new BufferedReader(new FileReader(new File(rootPath + inputFilesPath + scriptFileName)));
 
             String str;
-            while ((str = br.readLine()) != null)
-                System.out.println(keyboard.scriptLine(str));
+            while ((str = br.readLine()) != null) {
+                System.out.println("\"" + str + "\" scripts to: ");
+                System.out.println(keyboard.scriptLine(str) + "\n");
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -65,7 +72,7 @@ public class KeyboardScripter {
      * @param fileName - name of the file to read from
      * @return double array of characters
      */
-    private static char[][] createKeyboardLayout(String fileName) {
+    static char[][] createKeyboardLayout(String fileName) {
 
         // Must use a list as we don't know the size yet
         ArrayList<ArrayList<Character>> table = new ArrayList<>();
@@ -116,7 +123,6 @@ public class KeyboardScripter {
 
     /**
      * Prints out any char[][] array
-     * Only use this for testing purposes
      * @param array - the double array to print out
      */
     private static void print2DArray(char[][] array) {
