@@ -14,8 +14,8 @@ public class KeyboardScripter {
 
         // Strings to be used to access files
         String rootPath = "/Users/michaelbarton/IdeaProjects/OnScreenKeyboard/src/";
-        String alphabeticalFileName = "alphabeticalLayout.txt";
-        String qwertyFileName = "qwertyLayout.txt";
+        String alphabeticalFileName = "keyboardLayouts/alphabeticalLayout.txt";
+        String qwertyFileName = "keyboardLayouts/qwertyLayout.txt";
 
         // Other attributes needed for main
         Scanner sc = new Scanner(System.in);
@@ -41,7 +41,7 @@ public class KeyboardScripter {
         keyboard = new Keyboard(keyboardLayout);
 
         // For testing only
-        // print2DArray(keyboardLayout);
+        print2DArray(keyboardLayout);
 
         // Obtain file name to read through and script
         System.out.print("\nEnter the file name that you would like to script: ");
