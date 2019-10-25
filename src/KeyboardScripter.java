@@ -11,16 +11,19 @@ import java.util.Scanner;
 public class KeyboardScripter {
 
     public static void main(String[] args) {
+
+        // Strings to be used to access files
         String rootPath = "/Users/michaelbarton/IdeaProjects/OnScreenKeyboard/src/";
         String alphabeticalFileName = "alphabeticalLayout.txt";
         String qwertyFileName = "qwertyLayout.txt";
 
+        // Other attributes needed for main
         Scanner sc = new Scanner(System.in);
         String keyboardType, scriptFileName;
-
         char[][] keyboardLayout;
         Keyboard keyboard;
 
+        // Print welcome message and determine keyboard type
         System.out.println("Welcome to KeyboardScripter!");
 
         do {
@@ -28,6 +31,7 @@ public class KeyboardScripter {
             keyboardType = sc.nextLine();
         } while (!keyboardType.equals("alphabetical") && !keyboardType.equals("qwerty"));
 
+        // Create Keyboard based on keyboard type inputted from user
         if(keyboardType.equals("alphabetical")) {
             keyboardLayout = createKeyboardLayout(rootPath + alphabeticalFileName);
         } else {
@@ -36,9 +40,14 @@ public class KeyboardScripter {
 
         keyboard = new Keyboard(keyboardLayout);
 
+        // For testing only
+        // print2DArray(keyboardLayout);
+
+        // Obtain file name to read through and script
         System.out.print("\nEnter the file name that you would like to script: ");
         scriptFileName = sc.nextLine();
 
+        // Open file, read through and script each line
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File(rootPath + scriptFileName)));
 
@@ -51,9 +60,17 @@ public class KeyboardScripter {
 
     }
 
+    /**
+     * Reads in the keyboard layout from the file and converts it into a double array of characters
+     * @param fileName - name of the file to read from
+     * @return double array of characters
+     */
     private static char[][] createKeyboardLayout(String fileName) {
+
+        // Must use a list as we don't know the size yet
         ArrayList<ArrayList<Character>> table = new ArrayList<>();
 
+        // Read the lines into "table"
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File(fileName)));
 
@@ -65,11 +82,12 @@ public class KeyboardScripter {
             e.printStackTrace();
         }
 
+        // Create the double char array based on dimensions of "table"
         int rows = table.size();
         int columns = table.get(0).size();
-
         char[][] layout = new char[rows][columns];
 
+        // Extract out all characters from table into the double char array "layout"
         for(int i = 0; i < rows; i++) {
             for(int j = 0; j < columns; j++) {
                 layout[i][j] = table.get(i).get(j);
@@ -79,6 +97,11 @@ public class KeyboardScripter {
         return layout;
     }
 
+    /**
+     * Splits up a line of characters into a list based on a space regex
+     * @param str - the line of characters to split up, each token should be a string of length 1
+     * @return an ArrayList of characters representing a split version of str
+     */
     private static ArrayList<Character> parseCharacters(String str) {
         ArrayList<Character> characters = new ArrayList<>();
 
@@ -89,6 +112,20 @@ public class KeyboardScripter {
         }
 
         return characters;
+    }
+
+    /**
+     * Prints out any char[][] array
+     * Only use this for testing purposes
+     * @param array - the double array to print out
+     */
+    private static void print2DArray(char[][] array) {
+        for(char[] row : array) {
+            for (char element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
     }
 
 }
