@@ -1,0 +1,46 @@
+1. Have a Keyboard class that will accept a keyboard as a double array of chars (can be any kind of keyboard)
+    a. Make this keyboard layout come from a file like how the input will
+2. Create a class called KeyboardScripter that will act as the driver to read in the file, create the Keyboard object
+   with the appropriate keyboard and output the scripted result.
+
+Keyboard components:
+    Attributes:
+        private char[][] keyboard
+
+    Functions:
+        public Keyboard()
+        public String scriptLine(String input)
+        * any helper functions for scriptLine()
+
+Steps to implement this:
+1. Create classes and skeletons - done
+2. Implement Driver.java
+    a. Create Keyboard object from file
+    b. Get file input, read through each line
+    c. Pass each line to keyboard.scriptLine()
+    d. Print out the result
+3. Implement scriptLine() in Keyboard.java
+    - Initial idea is to have starting index be (0,0).
+    - Then, find the destination index (i, j).
+    - Perform arithmetic to find vertical and horizontal distances and use that to convert to 'U', 'D', 'L', 'R'
+        and just append a '#' on the end.
+    - Then, repeat starting index being the (i, j) you were just at.
+
+    - Note: you must first test if we are converting a letter or a space. If it's a space, just do 'S'.
+    - Note: if a letter, make sure we can do both upper and lower case letters.
+
+    - Forseeable helper functions:
+        Point doubleIndexOf(Char c)
+        String convertToScript(Point origin, Point destination)
+
+        Point will be a very small object containing an i and j pair of coordinates representing a location
+        in the double array of chars
+            Attributes:
+                int i, int j
+            Functions:
+                Point(i, j)
+                int getI()
+                int getJ()
+
+
+** NOTE: Not all of the above mentioned points were used in the final design, made some changes along the way **
