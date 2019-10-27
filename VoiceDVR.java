@@ -30,11 +30,11 @@ public class VoiceDVR {
 
 	// Translates all provided terms and writes them to a file
 	// param OutputFilename		name of file to write out to
-	public void Translate(String OutputFilename){
+	private void Translate(String OutputFilename){
 		try{
 			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(OutputFilename)));;
 			for( String s: searchTerms){
-				ArrayList<String> output = translateLine(s, charToPoint); 	// Get translation for string s
+				ArrayList<String> output = translateLine(s); 	// Get translation for string s
 				StringJoiner outputJoiner = new StringJoiner(",");
 				for(String x: output)
 					outputJoiner.add(x);			// Add each individual string for comma delimination
@@ -50,7 +50,7 @@ public class VoiceDVR {
 	// param term		string to translate
 	// param ctp 		hashtable to use in translation
 	// return ArrayList<String>	list of strings forming the necessary DVR moves
-	private ArrayList<String> translateLine(String term, HashMap<Character, Point> ctp){
+	public ArrayList<String> translateLine(String term){
 		Point pointAt = new Point(0,0);		// Always start at 0,0 which is A
 		ArrayList<String> output = new ArrayList<String>();
 		for(int i = 0; i < term.length(); i++){
@@ -59,7 +59,7 @@ public class VoiceDVR {
 				output.add("S");
 				continue;
 			}
-			Point newPoint = ctp.get(c);				// Point location of char c
+			Point newPoint = charToPoint.get(c);				// Point location of char c
 			int diffx =(int)(newPoint.getX() - pointAt.getX());	// Get the difference in x and y from last point to new point
 			int diffy =(int)(newPoint.getY() - pointAt.getY());
 			while( diffy != 0){					// If y is zero then y-coordinate is already correct
