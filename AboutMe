@@ -1,0 +1,9 @@
+Written by Gregory Woodward
+
+My solution to this project is written in java. First compile Driver.java and VoiceDVR.java with javac. VoiceDVR is a class that actually translates strings into DVR moves, while Driver calls this class with command line arguments. 
+
+To run: java Driver <input file name> <output file name>
+
+All input strings in the input file are written out on the same line in the output file
+
+I wrote unit tests for VoiceDVR.java using junit4, those tests can be found in VoiceDVRTests. To run the tests use VoiceDVRTestRunner. I am not an expert with junit so I think you can just compile VoiceDVRTests and VoiceDVRTestRunner with the right dependencies installed and you should be good. 
